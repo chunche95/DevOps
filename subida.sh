@@ -20,5 +20,13 @@ git commit -m "Script de subida de archivos" &&
 git push origin master 
 echo "Script subido"
 
-sleep 2
-echo "Trabajo terminado"
+sleep 3
+echo ""
+echo "---------------------"
+echo "| Trabajo terminado |"
+echo "---------------------"
+echo ""
+clear
+git status
+sleep 5
+clear 
