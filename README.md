@@ -1,4 +1,6 @@
-<title> Ansible. </title>
+<img src="images/Introduccion.png"> 
+<br>
+<h1> Ansible. </h1>
 
 Tecnología para el aprovisionamiento de sistemas. 
 Consiste en la preparación de un servidor con el software y los datos necesarios para que unos servicios puedan correr en un servidor web. 
