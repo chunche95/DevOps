@@ -1,0 +1,978 @@
+<!DOCTYPE HTML>
+<html lang="en">
+	<head>
+		<title>Ansible</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper-->
+			<div id="wrapper">
+
+				<!-- Nav -->
+					<nav id="nav">
+						<a href="index.html" class="icon fa-home"><span>Home</span></a>
+                        <a href="#ansible" class="icon fa-folder"><span>Ansible</span></a>
+						<a href="https://ualmtorres.github.io/CursoAnsible/tutorial/" target="_blank" class="icon fa-desktop"><span>Course</span></a>
+						<a href="https://github.com/chunche95/Ansible" target="_blank" class="icon fa-github"><span>GitHub</span></a>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Intro -->
+							<article id="home" class="panel content">
+								<header>
+									<h1><a href="python.html" target="_blank" rel="noopener noreferrer">Python and networks</a></h1>
+                                    <p>
+                                        <select name="python" id="responsive" multiple class="form-control">
+                                        <optgroup class="text-center" id="responsive">
+                                            <option>Learn network programmability with Cisco or GNS3 and Python version 3.</option>
+                                            <option>Learn how to leverage the configuration of network devices with Python.</option>
+                                            <option>Learn how to leverage NAPALM for network automation.</option>
+                                            <option>Use Netmiko for SSH connections to routers and switches.</option>
+                                            <option>Quick start guide using Telnet and SSH.</option>
+                                            <option>Learn how to scale your network scr</option>
+                                        </optgroup>
+                                        </select>
+                                    </p>                               
+                                    <h1><a href="#ansible">Ansible</a></h1>
+                                    <p>
+                                        <select name="python" id="responsive" multiple class="form-control">
+                                        <optgroup class="text-center" id="responsive">
+                                            <option> Getting started with Ansible </option>
+                                            <option> Automate network configurations with Ansible. </option>
+                                            <option> Troubleshoot networks using Ansible. </option>
+                                            <option> Learn how to leverage the power of DevOps (Ansible). </option>
+                                        </optgroup>
+                                        </select>                                        
+                                    </p>
+                                    <h1><a href="jenkins.html" target="_blank" rel="noopener noreferrer">Jenkins</a></h1>
+                                    <p>
+                                        <select name="python" id="responsive" multiple class="form-control">
+                                        <optgroup class="text-center" id="responsive">
+                                            <option> Introduction Jenkins </option>
+                                            <option> Update RPM Jenkins and configurate proxy Nginx </option>
+                                            <option> Configurate, administrate and assign roles </option>
+                                            <option> Configuration the build automation of IOS use Schenzhen </option>
+                                            <option> Configurate Jenkins of Build Automatized compiled IOS </option>
+                                            <option> Configuration Auto Git Push in the nice construction in Jenkins </option>
+                                            <option> Jenkins Groovy Scripting</option>
+                                        </optgroup>
+                                        </select>
+                                    </p>
+                                    <h1><a href="docker.html" target="_blank" rel="noopener noreferrer">Docker</a></h1>
+                                    <p>
+                                        <select name="python" id="responsive" multiple class="form-control">
+                                        <optgroup class="text-center" id="responsive">
+                                            <option> Getting started with Docker </option>
+                                            <option> Building images </option>
+                                            <option> restore containers </option>
+                                            <option> Connectiong containers </option>
+                                            <option> Data volumes and data containers </option>
+                                            <option> Debugging a container </option>
+                                            <option> Docker data volumes </option>
+                                            <option> Docker engine API </option>
+                                            <option> Docker events </option>
+                                            <option> Docker in Docker </option>
+                                            <option> Docker machine </option>
+                                            <option> Docker net modes </option>
+                                            <option> Docker network </option>
+                                            <option> Docker private/secure registry with API v2 </option>
+                                            <option> Docker registry </option>
+                                            <option> Docker files </option>
+                                            <option> How to setup three node mongo replica using docker image and provisioned using chef </option>
+                                            <option> IpTables with Docker </option>
+                                            <option> Logging </option>
+                                            <option> Managing containers and images </option>
+                                            <option> Multiple processes in one container instance </option>
+                                            <option> Restricting container network access </option>
+                                            <option> Running containers </option>
+                                            <option> Running services </option>
+                                            <option> Running simple node.js application </option>
+                                            <opntion> Security </opntion>
+                                        </optgroup>
+                                        </select>
+                                    </p>
+                                    <h1><a href="azureWebJob.html" target="_blank" rel="noopener noreferrer">Clouds Azure</a></h1>
+                                    <p>
+                                        <select name="python" id="responsive" multiple class="form-control">
+                                        <optgroup class="text-center" id="responsive">
+                                            <option> Getting started with azure-webjobs </option>
+                                            <option> Azure webjobs SDK  </option>
+                                        </optgroup>
+                                        </select>
+                                    </p>
+                                    <h1><a href="aws.html" target="_blank" rel="noopener noreferrer">Cloud AWS</a></h1>
+                                    <p>
+                                        <select name="python" id="responsive" multiple class="form-control">
+                                        <optgroup class="text-center" id="responsive">
+                                            <option> AWS Architecture and SysOps </option>
+                                            <option> AWS Developer </option>
+                                        </optgroup>
+                                        </select>
+                                    </p>                                    
+                                </header>
+                            </article>                               
+                        <!-- Introduction and configuration-->                    
+						<!-- Intro -->
+							<article id="ansible" class="panel">
+								<header>
+									<h1>Introduction: Ansible</h1>
+                                    <p>
+                                        Ansible is an open source IT tool provided by Red-Ha Enterprise Linux (RHEL) that assists in configuration management, orchestration service, task automation, and application deployment. <br>
+                                        This tool is aimed at helping system administrators looking to minimize recurring tasks, hassle-free deployment, and easy automation. <br>
+                                        The Ansible-like tools that exist are Puppet, SaltStack and Chef, which are the main administrative configuration tools available in the market. <br>
+                                        Each of these has its own advantages and disadvantages, so choosing the correct option can be a bit challenging, depending on what functions are needed or what programming language is preferred. <br>
+                                        <hr>
+                                        Ansible is a kind of tool made in Python, which uses YAML templates to scripting its work. <br>
+                                        YAML stands for "YAML Ain't Markup Language" which means that it is an easy to read language. This helps new users to understand it easily. <br>
+                                        Another advantage is that since it is not necessary to install an agent on the hosts, which improves communication speed, since it uses the push and pull models to send commands to its Linux nodes and, for Windows nodes, it uses the WinRM protocol. <br>
+                                        At its disadvantages, we have that, it has a poor user interface, a non-personalized platform and immature compared to other tools. <hr>
+                                    </p>
+                                    <h1>Ansible setup on Ubuntu</h1>
+                                    <p>
+                                        Before starting the installation process and for the installation of the Linux package, you must ensure that Python 3 (Version 3.5 or higher) is installed.
+                                        We can install from source, the development suite may be needed as the build-essential package for Ubuntu.
+                                        Ansible can be installed on Ubuntu using one of the following methods:
+                                        <ul>
+                                            <li>
+                                                Install Ansible PPA for Ubunutu using the following command: <br>
+                                                <blockquote>
+                                                    <code>
+                                                        <i>sudo apt-add repository ppa:ansible/ansible</i>
+                                                    </code>
+                                                </blockquote>
+                                            </li>
+                                            <li>
+                                                Next, configure the key server.
+                                            </li>
+                                            <li>
+                                                Third, update the package manager using command: <br>
+                                                <blockquote>
+                                                    <code>
+                                                        <i>sudo apt-get update</i>
+                                                    </code>
+                                                </blockquote>
+                                            </li>
+                                            <li>
+                                                Fourth and last step, install Ansible: <br>
+                                                <blockquote>
+                                                    <code>
+                                                        <i>sudo apt-get install -y ansible </i>
+                                                    </code>
+                                                </blockquote>
+                                            </li>
+                                        </ul>
+                                    </p>
+                                    <h1>Ansible master node configuration</h1>
+                                    <p>
+                                        Generally, the Ansible configuration file (ansible.cfg) is located in /etc/ansible/ansible.cfg or in the home directory owned by the user who installed Ansible.
+                                        As soon as it has been installed, you can start using it with its default settings. In the next few paragraphs, we will discuss the most important and useful Ansible settings that will enhance your experience working with Ansible.
+                                        Starting with Ansible 2.4 and later, 'ansible-config' is a command used by Ansible users to list enabled Ansible options with their values.
+                                        The ansible configuration file is divided into several sections, but in this article, we will only focus on the general [default] section. So let's look at the basic parameters.
+                                        We edit the configuration file, writing.
+                                        <blockquote>
+                                            <code>
+                                                <i>
+                                                    sudo nano /etc/ansible/ansible.cfg
+                                                </i>
+                                            </code>
+                                        </blockquote>
+                                        <table>
+                                            <tr>
+                                                <td>
+                                                    <b>inventory</b>: Points to the inventory location Ansible uses to find out the available hosts.
+                                                    <blockquote>
+                                                        inventory = /etc/ansible/hosts
+                                                    </blockquote>
+                                                </td>                                                
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <b>roles_path</b>: Indicates the location where the Ansible Playbook has to search for additional roles.
+                                                    <blockquote>
+                                                        roles_path = /etc/ansible/roles 
+                                                    </blockquote>
+                                                </td>                                                
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <b>log_path</b>: Indicates the location where Ansible logs are stored. Permission to write to this file must be given to user Ansible.
+                                                    <blockquote>
+                                                        log_path = /var/log/ansible.log 
+                                                    </blockquote>
+                                                </td>                                                
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <b>retry_files_enabled</b>: Indicates the retry feature that allows Ansible to create a '.retry' file every time a Playbook fails. It is recommended to leave this option disabled unless you really want it, as if it is enabled it will create multiple files that take up a lot of disk space.
+                                                    <blockquote>
+                                                        rety_files_enabled = False
+                                                    </blockquote>
+                                                </td>                                                
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <b>host_keychecking</b>: Test parameter is used in constantly changing environments, where old hosts are dropped and new hosts take their place. This parameter is generally used in a cloud or virtualized environment.
+                                                    <blockquote>
+                                                        host_key_checking = False
+                                                    </blockquote>
+                                                </td>                                                
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <b>Forks</b>: Indicates the number of parallel tasks that can be run on the client host. By default, the value of this property is 5 and this saves system resources and network bandwidth, but in case you have enough resources and good bandwidth, you can increase this number.
+                                                    <blockquote>
+                                                        forks = 5
+                                                    </blockquote>
+                                                </td>                                                
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <b>remote_port</b>: Contains the por number used by SSH on hosts.
+                                                    <blockquote>
+                                                        remote_port = 22
+                                                    </blockquote>
+                                                </td>                                                
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <b>nocolor</b>: Gives tha ability to use different colors for the playbook and Ansible tasks showing errors and successes.
+                                                    <blockquote>
+                                                        nocolor = 0
+                                                    </blockquote>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                        <hr>
+                                    </p>
+                                    <h1>Ansible clients node configuration</h1>
+                                    <h2>Linux SO</h2>
+                                    <p>
+                                        OpenSSH-server is the only major tool that needs to be installed on the client node, and by default all new versions of Linux use SSH as the main remote access tool. Therefore, you need to review the following points carefully:
+                                        <ul>
+                                            <li>The SSH service is always working.</li>
+                                            <li>The SSH port, which is pel 22 by default, must be allowed in the system's firewall.</li>
+                                        </ul>
+                                    </p>
+                                    <h2>Windows SO</h2>
+                                    <p>
+                                        For Ansible to be able to remotely manage the Windows host, the following applications must be installed on the Windows nodes.
+                                        <ul>
+                                            <li>PowerShell version 3.0 or higher.</li>
+                                            <li>.NET version 4.0 or higher.</li>
+                                        </ul>
+                                    </p>
+                                    <h2>Laboratories Ansible.</h2>
+                                    <p>
+                                        This folder contains all the helping for ejects the Ansible Labs. Inside this folder, you can see three sub-directories. <br>
+                                        <ol>
+                                            <li>
+                                                Docker
+                                            </li>
+                                            <li>
+                                                Net
+                                            </li>
+                                            <li>
+                                                Volume
+                                            </li>
+                                            The first two folders contain the files that you need eject to laboratories. The third folder exist only to save data files  after eject the first labs, which work over container. 
+                                            Who the cointainer doesn't status save, it linked this folder who volume at safe file that continue exist after reboot the cointainer. 
+                                        </ol>
+                                    </p>                                    
+                                </header>
+                                <div class="wrapper">
+                                    <!-- Chapter 1 -->
+                                    <h1>Chapter 1. Getting started with ansible.</h1>
+                                    <p>
+                                        <h2>Remarks.</h2>
+                                        <p>
+                                            This section provides an overview of what ansible is, and why a developer might want to use it.
+                                            It should also mention any large subjects within ansiblem  and link out to the related topics, Since the Documentation for Ansible is new, you may, need to create initial versions of those related topics.                                        
+                                            <h3>Examples.</h3>
+                                            <p>
+                                                <h3>Hello, world.</h3>
+                                                Create a directory called. 
+                                                <code>
+                                                    ansible-helloworld-playbook
+                                                </code>
+                                                <blockquote>
+                                                    <code>
+                                                        mkdir ansible-helloworld-playbook
+                                                    </code>
+                                                </blockquote>                                                
+                                            </p> <!-- Examples -->
+                                            Create a file <code>hosts</code> and add remote sustems how want to manage. As asible relies on ssh to connect the machines, you should make sure they are already accessible to you in ssh from your computer.
+                                            <blockquote>
+                                                <code>
+                                                    192.168.1.1
+                                                    192.168.1.2
+                                                </code>                                                
+                                            </blockquote>
+                                            Test connection to your remote systems using the Ansible ping module.
+                                            <blockquote>
+                                                <code>
+                                                    ansible all -m ping -k
+                                                </code>
+                                            </blockquote>
+                                            In case of success it should retrun something like that.
+                                            <blockquote>
+                                                <code>
+<pre>
+    192.168.1.1| SUCCESS => {
+        "changed": false,
+        "ping": "pong"
+    }
+    192.168.1.2| SUCCESS => {
+        "changed": false,
+        "ping": "pong"
+    }    
+</pre>
+                                                </code>
+                                            </blockquote>
+                                            In case of error it should return.
+                                            <blockquote>
+                                                <code>
+<pre>
+    192.168.1.1| UNREACHABLE! => {
+        "changed": false,
+        "mesg": "Failed to connect to the host via ssh.",
+        "unreachable": true
+    }
+</pre>
+                                                </code>
+                                            </blockquote>
+                                            Test sudo access with 
+                                            <blockquote>
+                                                <code>
+                                                    ansible all -m ping -k b 
+                                                </code>
+                                            </blockquote>
+                                            <h3>
+                                                Test connection and configuration with ping
+                                            </h3>
+                                            <p>
+                                                <blockquote>
+                                                    <code>
+                                                        ansible -i hosts -m ping targethost
+                                                    </code>
+                                                </blockquote>
+                                                <strong>-i hosts</strong> defines the path to inventory file. <br>
+                                                <strong>targethost</strong> is the name of the host in the <code>host</code> file.
+                                            </p> <!-- Test connection -->
+                                            <h3>
+                                                Inventory
+                                            </h3>
+                                            <p>
+                                                Inventory is the Ansible way to track all the sustems in your infraestructure. here is a simple static inventory file containing file a single system and the login credentials for Ansible.
+                                                <blockquote>
+                                                    <code>
+<pre>
+    [targethost]
+    192.168.1.1 ansible_user=paulino ansible_ssh_pass=(PassW0rd)
+</pre>
+                                                    </code>
+                                                </blockquote>
+                                                Write these lines for examples to <code>hosts</code> file and pass thee file to <code>ansible</code> or  <code>ansible-playbook</code> command with <code>-i</code>/<code>--inventory-file</code> flag.
+                                            </p> <!-- Inventory -->
+                                            <h3>Provisioning remote machones with Ansible</h3>
+                                            <p>
+                                                We can provision remote sustems with Ansible. You should have an SSH key-pair  and you should take your SSH public key to the machine ~/.ssh/authorized_key file. The porpuse is you can login without any authorization. <br>
+                                                <h4>Prerequisites</h4>
+                                                <p>
+                                                    - Ansible.
+                                                </p>
+                                                You need an Inventory file (for example: development.ini) where you determinen the host waht you want to use:
+                                                <blockquote>
+                                                    <code>
+<pre>
+    [MACHINE_NAME]
+    MACHINE_NAME host_name=MACHINE_NAME ansible_ssh_host=IP_ADDRESS ansible_port=SSH_PORT ansible_connection=ssh
+    ansible_user=USER ansible_ssh_extra_args="-o StrictHostKeyChecking=no -o UserKenorHostFile=/dev/null" 
+</pre>                                                        
+                                                    </code>
+                                                </blockquote>
+                                                <ul>
+                                                    <li><strong>hostname</strong> - the  hostname of the remote machine</li>
+                                                    <li><strong>ansible_ssh_host</strong> - the IP or domain of the remote host</li>
+                                                    <li><strong>ansible_port</strong> - the port of the remote host wich is usually 22 </li>
+                                                    <li><strong>ansible_connection</strong> - the connection where we set, we want to connect with ssh</li>
+                                                    <li><strong>ansible_user</strong> - the ssh user</li>
+                                                    <li><strong>ansible_ssh_extra_args</strong> - extra argumentums what you want to sepecify for the ssh connection</li>
+                                                </ul>
+                                                Required extra args for ssh:
+                                                <ul>
+                                                    <li>
+                                                        StrinctHostKeyChecking - It can ask a key  checking what waiting for a yes or no. The Ansible can't answer this question then throw an error, the ost not available.
+                                                    </li>
+                                                    <li>
+                                                        UserKnowHostFile - Needed for StrictHostKeyChecking option.
+                                                    </li>
+                                                </ul>
+                                                If you have this inventory file you can write a test playbook.yml
+<blockquote>
+    <code>
+<pre>
+    ---
+    - hosts: MACHIN_NAME
+      task:
+          - name: Say Hello
+            debug:
+            msg:  'Hello, world'    
+</pre>
+    </code>
+</blockquote>
+                                                then you can start the provision:
+                                                <blockquote>
+                                                    <code>
+                                                        ansible-playbook -i development.ini playbook.yml
+                                                    </code>
+                                                </blockquote>
+                                            </p>
+                                        </p> <!-- Remarks-->
+                                    </p> <!-- Chapter 2 -->
+                                    <h1>Chapter 2. Ansible architecture</h1>
+                                    <p>
+                                        The idea is to have one or more control machines from where you can issue ad-hoc commands to remote machines (via ansible tool) or run a sequenced instruction set via playbooks (via ansible-playbook tool). <br>
+                                        Basically, we use Ansible control machine, this will typically be your desktop, laptop or server. Then from there , you use Ansible to push configuration changes out, via ssh. <br>
+                                        The host inventory file determines the target machines where these plays will be executed. The Ansible configuration file can be customized to reflect the settings in your environment. 
+                                        <div>
+                                            <img src="images/ansible-architecture.webp" alt="" srcset="">
+                                        </div>
+                                    </p> <!-- Chapter 3 -->
+                                    <h1>Chapter 3. Ansible group variables</h1>
+                                    <p>
+                                        <h2>Group variables with static inventory</h2>
+                                        <p>
+                                            It is suggested that you define groups based on purpose of the host (roles) and also geography or datacenter location (if applicable): <br>
+                                            File <code>inventory/production</code>
+                                            <blockquote>
+                                                <code>
+<pre>
+    [rogue-server]
+    192.168.1.1
+
+    [atlanta-webservers]
+    www-atl-1.example.com
+    www-atl-2.example.com
+    
+    [boston-webservers]
+    www-bos-1.example.com
+    www-bos-2.example.com
+    
+    [atlanta-dbservers]
+    db-atl-1.example.com
+    db-atl-2.example.com
+    
+    [boston-dbservers]
+    db-bos-1.example.com
+    db-bos-2.example.com
+    
+    # webservers in all geos
+    [webservers:children]
+    atlanta-webservers
+    boston-webservers
+
+    # dbservers in all geos
+    [dbservers:children]
+    atlanta-dbservers
+    boston-dbservers
+
+    # everything in the atlanta geo
+    [atlanta:children]
+    atlanta-webservers
+    atlanta-dbservers
+
+    # everything in the boston geo
+    [boston:children]
+    boston-webservers
+    boston-dbservers
+
+</pre>                                                    
+                                                </code>
+                                            </blockquote>
+                                            File <code>group_vars/all</code>
+                                            <blockquote>
+                                                <code>
+<pre>
+    ---
+    apache_port: 80
+</pre>                                                    
+                                                </code>
+                                            </blockquote>
+                                            File <code>group_vars/atlanta-webservers</code>
+                                            <blockquote>
+                                                <code>
+<pre>
+    ---
+    apache_port: 1080
+</pre>                                                    
+                                                </code>
+                                            </blockquote>
+                                            File <code>group_vars/boston-webservers</code>
+                                            <blockquote>
+                                                <code>
+<pre>
+    ---
+    apache_port: 8080
+</pre>                                                    
+                                                </code>
+                                            </blockquote>
+                                            File <code>host_vars/www-bos-2.example.com</code>
+                                            <blockquote>
+                                                <code>
+<pre>
+    ---
+    apache_port: 8111
+</pre> 
+                                                </code>
+                                            </blockquote>
+                                            After running <code>ansible-playbooks -i inventory/hosts install-apache.yml</code> (hosts in the playbook would be <code>hosts: all</code>) <br>
+                                            The ports would be
+                                            <table>
+                                                <tr>
+                                                    <td>Address</td>
+                                                    <td>Port</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>192.168.1.1</td>
+                                                    <td>1080</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>www-atl-1.example.com</td>
+                                                    <td>1080</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>www-atl-2.example.com</td>
+                                                    <td>1080</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>www-bos-1.example.com</td>
+                                                    <td>8080</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>www-bos-2.example.com</td>
+                                                    <td>8111</td>
+                                                </tr>
+                                            </table>
+                                        </p>
+                                    </p>
+                                    <!-- Chapter 4 -->
+                                    <h1>Chapter 4. Ansible group vars</h1>
+                                    <p>
+                                        <h2>examples</h2>
+                                        <h3>Example group_vars/development, and why</h3>
+                                        <p>
+                                            Project structure
+                                            <blockquote>
+                                                <code>
+<pre>
+    project/
+        group_vars/
+            development
+        inventory.development
+        playbook.yaml
+</pre>                                                    
+                                                </code>
+                                            </blockquote>
+                                            There variables will be applied to hosts under the development group due to the filename. 
+                                            <blockquote>
+                                                <code>
+<pre>
+    ---
+    ## Application
+    app_name: app
+    app_url: app.io
+    web_url: cdn.io
+    app_friendly: New App
+    env_type: production 
+    app_debug: false
+
+    ## SSL
+    ssl:true
+    ev_ssl: false
+
+    ## Database 
+    database_hosts: 127.0.0.1
+    database_name: app
+    database_user: sql
+
+    ## Elasticsearch
+    elasticsearch_host: 127.0.0.1
+</pre>                                                    
+                                                </code>
+                                            </blockquote>
+                                        </p>
+                                    </p>
+                                    <!-- Chapter 5 -->
+                                    <h1>Chapter 5. Ansible install mysql</h1>
+                                    <p>
+                                        <h2>Introduction</h2>
+                                        <p>
+                                            How use ansible to install mysql binary file
+                                        </p>
+                                        <h2>Examples</h2>
+                                        <h3>How use ansible to install mysql binary file</h3>
+                                        <p>
+                                            · hosts: mysql task:
+                                            <ul>
+                                                <li>
+                                                    name: Add mysql user user: name: mysql shell: /sbin/nologin
+                                                </li>
+                                                <li>
+                                                    name: install the lastest version of libselinux-python yum: name: libselinux-python state: latest
+                                                </li>
+                                                <li>
+                                                    name: install perl yum: name: perl state: latest
+                                                </li>
+                                                <li>
+                                                    name: remove the mysql-libs package yum: name: mysql-libs state:absent
+                                                </li>
+                                            </ul>
+                                            <blockquote>
+                                                <code>
+<pre>
+    - name: download and unarchive tar
+      unarchive:
+        src=/tmp/mysql-5.6-35.-linux-glibc22.5-x86_64.tar.gz
+        dest=/tmp
+        copy=yes
+    - name: Move mysql paceage to specifed directory 
+      command: creates="/usr/local/mysql" mv /tmp/mysql-5.6.35.-linux-glibc22.5-x86_64 /usr/local/mysql
+
+    - name: Add lib to ld.so.conf 
+      lineinfile: dest=/etc/ld.so.conf line="/usr/local/mysql/lib/"
+
+    - name: ldconfig
+      commnad: /sbin/ldconfig
+    
+    - name: Mkdir mysql_data_dir
+      file: path= /data/mysql/3306/{{   item    }} state=directory owner=mysql group=mysql
+      with_items:
+        - data
+        - logs
+        - tmp
+    
+    - name: Copy mysql my.cnf
+      copy: src=/etc/my.cnf dest=/etc/my.cnf
+    
+    - name: Copy mysql my.cnf
+      copy: src=/ect/my.cnf dest=/usr/local/mysql/my.cnf
+    
+    - name: Init mysql db
+      commnad: /usr/local/mysql/scripts/mysql_install_db    \
+        --user=mysql
+        --basedir=/usr/local/mysql  \
+        --datadir=/data/mysql/3306/data
+    
+    - name: Add mysql bin to profile
+      lineinfile: dest=/etc/profile line"export PATH=$PATH:/usr/local/mysql/bin/"
+
+    - name: Source profile
+      shell: executable=/bin/bash source /ect/profile 
+    
+    - name: Copy mysqld to init when system start
+      command: cp -f /usr/local/mysql/support-files/mysql.server /etc/init.d/mysqld
+    
+    - name: Add mysqld to system start
+      command: /sbin/chkconfig --add mysqld
+     
+    - name: Add mysql to system start when init 345
+      command: /sbin/chkconfig --level 345 mysqld on
+    
+    - name: Retart mysql
+      service: name=mysqld state=restarted
+</pre>                                                    
+                                                </code>
+                                            </blockquote>
+                                        </p>
+                                    </p>
+                                    <!-- Chapter 6 -->
+                                    <h1>Chapter 6. Ansible: Looping</h1>
+                                    <p>
+                                        <h2>Examples</h2>
+                                        <p>
+                                            A <code>with_items</code> loop in ansible can be used to easily loop over values. 
+                                            <blockquote>
+                                                <code>
+<pre>
+    - name: Add lines to this file 
+      lineinfile: dest=/ect/file line={{    item    }} state=present
+      with_items:
+        - Line 1
+        - Line 2
+        - Line 3
+</pre>                                                    
+                                                </code>
+                                            </blockquote>
+                                            <h3>With_items - predefined list</h3>
+                                            <p>
+                                                You can also loop over a variable list. <br>
+                                                From vars:
+                                                <blockquote>
+                                                    <code>
+<pre>
+    favorite_snacks:
+        - hotdog
+        - ice cream
+        - chips
+</pre>                                                        
+                                                    </code>
+                                                </blockquote>
+                                                and then the loop:
+                                                <blockquote>
+                                                    <code>
+<pre>
+    - name: create directories for storing my snacks
+      file: path=/etc/snacks/{{     item    }} state=directory
+      with_items: '{{   favorite_snacks     }}'
+</pre>                                                        
+                                                    </code>
+                                                </blockquote>
+                                                If you are using Ansible 2.0+ you must use quotes around the call to the variable. 
+                                            </p>
+                                            <h3>With_items - predefined directory</h3>
+                                            <p>
+                                                It is possible to create more complex loops with directories. From vars:
+                                                <blockquote>
+                                                    <code>
+<pre>
+    packages: 
+        - present: tree 
+        - present: nmap
+        - absent: apache2
+</pre>                                                        
+                                                    </code>
+                                                </blockquote>
+                                                Then the loop:
+                                                <blockquote>
+                                                    <code>
+<pre>
+    - name: manage packages
+    package: name={{    item.value  }} state={{     item.key    }}
+    with_items: '{{ packages }}'
+</pre>                                                        
+                                                    </code>
+                                                </blockquote>
+                                                Or, if you don't like to use the key value: <br>
+                                                Vars:
+                                                <blockquote>
+                                                    <code>
+<pre>
+    packages:
+        - name: tree
+          state: present
+        - name: nmap
+          state: present
+        - name: apache2
+          state: absent
+</pre>                                                        
+                                                    </code>
+                                                </blockquote>
+                                                Then the loop:
+                                                <blockquote>
+                                                    <code>
+<pre>
+    - name: manage packages
+      packages: name={{ item.name }} state={{   item.state  }}
+      with_items: '{{   packages    }}'
+</pre>                                                        
+                                                    </code>
+                                                </blockquote>
+                                            </p>
+                                            <h3>With_items - dictorionary</h3>
+                                            <p>
+                                                You can use a dictorionary for slightly more complex loop. 
+                                                <blockquote>
+                                                    <code>
+<pre>
+    - name: manage packages
+      packages: name={{ item.name   }} state={{     item.state  }}
+      with_items:
+        - { name: tree, state: present }
+        - { name: nmap, state: present }
+        - { name: apache2, state: absent }
+</pre>                                                        
+                                                    </code>
+                                                </blockquote>                                                
+                                            </p>
+                                            <h3>Nested loops</h3>
+                                            <p>
+                                                You can create nested loops using <code>with_nested</code> from vars: 
+                                                <blockquote>
+                                                    <code>
+<pre>
+    keys: 
+        - key1
+        - key2
+        - key3
+        - key4
+</pre>                                                        
+                                                    </code>
+                                                </blockquote>                                                
+                                                then the loops: 
+                                                <blockquote>
+                                                    <code>
+<pre>
+    - name: Distribute SSH keys among multiple users
+      lineinfile: dest=/home/{{ item[0] }}/.ssh/authorized_keys line={{ item[1] }} state=present
+      with_nested:
+        - [ 'calvin', 'josh', 'alice' ]
+        - '{{   keys    }}'
+</pre>                                                        
+                                                    </code>
+                                                </blockquote>
+                                                This task will loop pver user and populate their <code>authorized_keys</code> file with the 4 keys defined in the list.
+                                            </p>
+                                        </p>
+                                    </p>
+                                    <!-- Chapter 7 -->
+                                    <h1>Chapter 7. Ansible: Loops and Conditionals</h1>
+                                    <p>
+                                        <h2>Remarks.</h2>
+                                        <p>
+                                            Official docs explains playbooks conditionals. <a href="https://docs.ansible.com/ansible/playbooks_conditionals.html" target="_blank" rel="noopener noreferrer">Conditionals documentation</a>.
+                                            <br>
+                                            Ansible (github). <a href="https://github.com/marxwang/ansible-learn-resources" target="_blank" rel="noopener noreferrer">Github repository</a>
+                                        </p>
+                                        <h2>Examples</h2>
+                                        <p>
+                                            <h3>What kinds of conditionals to use?</h3>
+                                            <p>
+                                                Use conditionals via (syntax is in [<code>brackets</code>]):
+                                                <ul>
+                                                    <li>
+                                                        when <strong>[when:]</strong> <br>
+                                                        <blockquote>
+                                                            <code>
+<pre>
+    Task:
+        - name: run if operating system is debian
+          command: echo "I am a Debian Computer"
+          when: ansible_os_family == "Debian"
+</pre>                                                                
+                                                            </code>
+                                                        </blockquote>
+                                                    </li>
+                                                    <li>
+                                                        loops <strong>[with_items:</strong>
+                                                    </li>
+                                                    <li>
+                                                        loops <strong>[with_dicts:</strong>
+                                                    </li>   
+                                                    <li>
+                                                        Custom Facts <strong>[when: my_custom_facts == '1234']</strong>
+                                                    </li>
+                                                    <li>
+                                                        Conditional imports
+                                                    </li>
+                                                    <li>
+                                                        Select files and templates based on variables
+                                                    </li>
+                                                </ul>
+                                            </p>
+                                            <h3>[When] Condition: 'ansible_os_family' lists</h3>
+                                            <p>
+                                                <h4>Common use</h4>
+                                                <p>
+                                                    <ul>
+                                                        <li>when: ansible_os_family  == "CentOS"</li>
+                                                        <li>when: ansible_os_family  == "Redhat"</li>
+                                                        <li>when: ansible_os_family  == "Darwin"</li>
+                                                        <li>when: ansible_os_family  == "Debian"</li>
+                                                        <li>when: ansible_os_family  == "Windows"</li>                                                        
+                                                    </ul>
+                                                    <blockquote>
+                                                        <code>
+<pre>
+    OS_FAMILY = dict (
+        Redhat = 'RedHat',
+        Fedora = 'RedHat',
+        CentOS = 'RedHat',
+        Scientific = 'RedHat',
+        SLC = 'RedHat',
+        Ascendos = 'RedHat',
+        CloudLinux = 'RedHat',
+        PSBM = 'RedHat',
+        OracleLinux = 'RedHat',
+        OVS = 'RedHat',
+        OEL = 'RedHat',
+        Amazon = 'RedHat',
+        XenServer = 'RedHat',
+        Ubuntu = 'Debian',
+        Debian = 'Debian',
+        SLES = 'Suse',
+        SLED = 'Suse',
+        OpenSuSE = 'Suse',
+        SuSE = 'Suse',
+        Gentoo = 'Gentoo',
+        ArchLinux = 'Archlinux',
+        Mandriva = 'Mandrake',
+        Mandrake = 'Mandrake',
+        Solaris = 'Solaris',
+        Nexenta = 'Solaris',
+        OmniOS = 'Solaris',
+        OpenIndiana = 'Solaris',
+        SmartOS = 'Solaris',
+        AIX = 'AIX',
+        Alpine = 'Alpine',
+        MacOSX = 'Darwin',
+        FreeBSD = 'FreeBSD',
+        HPUX = 'HP-UX'
+    )
+</pre>                                                            
+                                                        </code>
+                                                    </blockquote>
+                                                </p>
+                                            </p>
+                                            <h3>When condition</h3>
+                                            <p>
+                                                <h4>Basic usage</h4>
+                                                <p>
+                                                    Use the when condition to control whether a task or role runs or is skipped. This is normally used to change play behavior based on facts from the destination system. Consider this playbook:
+                                                    <blockquote>
+                                                        <code>
+<pre>
+    - hosts: all 
+      tasks:
+        - include: Ubuntu.yml
+          when: ansible_os_family == "Ubuntu"
+
+        - include: RHEL.yml
+          WHEN: ANSIBLE_OS_FAMILY == "ReadHat"
+</pre>                                                            
+                                                        </code>
+                                                    </blockquote>
+                                                    
+                                                </p>
+                                            </p>
+                                        </p>
+                                    </p>
+                                </div>
+                                 <!-- Footer -->
+                                <div id="footer">
+                                    <ul class="copyright">
+                                        <li>&copy; Human Computing 3.0 &REG;.</li><li>Design: <a href="https://github.com/chunche95">Chunche95</a></li>
+                                    </ul>
+                                </div>
+                            </article>
+                    </div>                   
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+			<script src="https://use.fontawesome.com/f47775a990.js"></script>
+            <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+
+
+	</body>
+</html>

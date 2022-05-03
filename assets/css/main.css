@@ -1,12 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,300italic,400italic");
 @import url("font-awesome.min.css");
 
-/*
-	Astral by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
-*/
-
 html, body, div, span, applet, object,
 iframe, h1, h2, h3, h4, h5, h6, p, blockquote,
 pre, a, abbr, acronym, address, big, cite,
@@ -21,7 +15,7 @@ section, summary, time, mark, audio, video {
 	margin: 0;
 	padding: 0;
 	border: 0;
-	font-size: 100%;
+	font-size: calc(95% + 1vw);
 	font: inherit;
 	vertical-align: baseline;}
 
@@ -45,7 +39,10 @@ blockquote, q {
 		content: '';
 		content: none;
 	}
-
+pre {
+	font-size: calc(90% + 0.5vw);
+	margin: 1vh;
+}
 table {
 	border-collapse: collapse;
 	border-spacing: 0;
@@ -73,7 +70,7 @@ input, select, textarea {
 }
 
 .text-center {
-	font-size: 58%;
+	font-size: calc(58% + 1vw);
 	text-align: justify;
 }
 /* Row */
@@ -1332,14 +1329,14 @@ input, select, textarea {
 		font-family: 'Source Sans Pro', sans-serif;
 		font-weight: 300;
 		color: #777777;
-		font-size: 20pt;
+		font-size:calc(12px + 1vw);
 		line-height: 1.75em;
 	}
 
 		@media screen and (max-width: 1680px) {
 
 			body, input, textarea, select {
-				font-size: 15pt;
+				font-size: calc(1em + 1vw);
 			}
 
 		}
@@ -1347,7 +1344,7 @@ input, select, textarea {
 		@media screen and (max-width: 1280px) {
 
 			body, input, textarea, select {
-				font-size: 14pt;
+				font-size: calc(1em + 1vw);
 			}
 
 		}
@@ -1355,7 +1352,7 @@ input, select, textarea {
 		@media screen and (max-width: 736px) {
 
 			body, input, textarea, select {
-				font-size: 12pt;
+				font-size: calc(0.4em + 1vw);
 			}
 
 		}
@@ -1363,7 +1360,7 @@ input, select, textarea {
 		@media screen and (max-width: 360px) {
 
 			body, input, textarea, select {
-				font-size: 11pt;
+				font-size: calc(0.4em + 1vw);
 			}
 
 		}
@@ -1374,39 +1371,42 @@ input, select, textarea {
 	}
 
 	h1 {
-		font-size: 2.4em;
-		letter-spacing: -0.015em;
+		font-size: calc(2em + 0.6vw);
+		letter-spacing: 0.015em;
+		margin-block: 7px;
 	}
 
 	h2 {
-		font-size: 1.8em;
+		font-size: calc(1em + 0.6666vw);
 		letter-spacing: -0.015em;
 	}
 
 	h3, h4, h5, h6 {
-		font-size: 1.25em;
-		letter-spacing: -0.015em;
+		font-size: calc(0.5em + 0.5vw);
+		letter-spacing: 0.015em;
 	}
 
 	@media screen and (max-width: 736px) {
 
 		h1 {
-			font-size: 1.75em;
+			font-size: calc(1em + 1vw);
 		}
 
 		h2 {
-			font-size: 1.375em;
+			font-size: calc(0.75em + 1vw);
 		}
 
 		h3, h4, h5, h6 {
-			font-size: 1em;
+			font-size: calc(0.3em + 1vw);
 		}
 
 	}
+	
 
 	blockquote {
 		border-left: solid 0.5em #ddd;
 		padding: 1em 0 1em 2em;
+		font-size: calc(5px+1vm);
 		font-style: italic;
 	}
 
@@ -1417,20 +1417,20 @@ input, select, textarea {
 	hr {
 		border: 0;
 		border-top: solid 1px #ddd;
-		padding: 1.5em 0 0 0;
-		margin: 1.75em 0 0 0;
+		padding: 1.2em 0 0 0;
+		margin: 1.5em 0 0 0;
 	}
 
 	sub {
 		position: relative;
 		top: 0.5em;
-		font-size: 0.8em;
+		font-size: calc(0.8em + 1vw);
 	}
 
 	sup {
 		position: relative;
 		top: -0.5em;
-		font-size: 0.8em;
+		font-size: calc(0.8em + 1vw);
 	}
 
 	br.clear {
@@ -1464,6 +1464,13 @@ input, select, textarea {
 		table.default thead {
 			border-bottom: solid 2px #f4f4f4;
 		}
+		
+		@media screen and (max-width: 320px) {
+			table {
+			  display: block;
+			  overflow-x: auto;
+			}
+	   }
 
 /* Form */
 
@@ -1651,7 +1658,7 @@ input, select, textarea {
 		input[type="reset"].small,
 		button.small,
 		.button.small {
-			font-size: 0.75em;
+			font-size: calc(0.75em + 1vw);
 		}
 
 		input[type="button"].large,
@@ -1659,7 +1666,7 @@ input, select, textarea {
 		input[type="reset"].large,
 		button.large,
 		.button.large {
-			font-size: 1.25em;
+			font-size: calc(1.25em + 1vw);
 			padding: 0.5em 1.25em 0.5em 1.25em;
 		}
 
@@ -1668,7 +1675,7 @@ input, select, textarea {
 		input[type="reset"].xlarge,
 		button.xlarge,
 		.button.xlarge {
-			font-size: 1.5em;
+			font-size: calc(1.5em + 1vw);
 			padding: 0.5em 1.25em 0.5em 1.25em;
 		}
 
@@ -1703,6 +1710,34 @@ input, select, textarea {
 		ol li {
 			padding-left: 0.25em;
 		}
+	#contents ul ul {
+		list-style: none;
+		position: absolute;
+	}
+	#contents ul li {
+		position: relative;
+		float: none;
+	}
+	#contents ul li:hover{
+		display: none;
+		position: absolute;		
+	}
+	#contents ul li:hover > ul {
+		display: block;
+	}
+	#responsiveList {
+		width: 100%;
+		display: block;
+        text-align:center;
+		font-size: calc(0.12em + 1vw);
+	}
+	#responsiveTable {
+		width: 100%;
+		display: block;
+        text-align:center;
+		content: attr(data-th);
+	}
+	
 
 /* Actions */
 
@@ -1758,7 +1793,7 @@ input, select, textarea {
 
 	#nav {
 		text-align: center;
-		height: 4.25em;
+		height: 3.25em;
 		cursor: default;
 	}
 
@@ -1769,7 +1804,7 @@ input, select, textarea {
 			width: 1em;
 			height: 1em;
 			line-height: 0.9em;
-			font-size: 2.5em;
+			font-size: calc(2.5em + 1vw);
 			margin: 0 0.25em 0 0.25em;
 			opacity: 0.35;
 			outline: 0;
@@ -1784,7 +1819,7 @@ input, select, textarea {
 			}
 
 			#nav a:before {
-				font-size: 0.8em;
+				font-size: calc(0.8em + 1vw);
 			}
 
 			#nav a:after {
@@ -1809,7 +1844,7 @@ input, select, textarea {
 				background: #222222;
 				color: #ffffff;
 				top: -2.75em;
-				font-size: 0.3em;
+				font-size: calc(0.3em + 1vw);
 				height: 2.25em;
 				line-height: 2.25em;
 				left: 50%;
@@ -1960,10 +1995,10 @@ input, select, textarea {
 			@media screen and (max-width: 736px) {
 
 				#main > .panel {
-					padding: 2em 1.5em 1.5em 1.5em;
+					padding: 2em 2em 2em 2.1em;
 				}
 
-			}
+			}			
 
 			#main > .panel.intro {
 				padding: 0;
@@ -1983,9 +2018,9 @@ input, select, textarea {
 			}
 
 			#main > .panel.content {
-				padding: 2em;
-				margin: 5em;
-				height: 16em;
+				padding: 3em + auto;
+				margin: 1px + auto;
+				height: 34em + auto;
 				display: -moz-flex;
 				display: -webkit-flex;
 				display: -ms-flex;
@@ -2011,7 +2046,7 @@ input, select, textarea {
 					-webkit-flex-shrink: 0;
 					-ms-flex-shrink: 0;
 					flex-shrink: 0;
-					width: 17em;
+					width: calc(17em + 1vw);
 					height: 100%;
 				}
 
@@ -2022,7 +2057,7 @@ input, select, textarea {
 						left: 0;
 						background: url("images/overlay.png");
 						width: 100%;
-						height: 100%;
+						height: auto;
 						z-index: 1;
 					}
 
@@ -2033,7 +2068,7 @@ input, select, textarea {
 						top: 0;
 						left: 0;
 						width: 100%;
-						height: 100%;
+						height: auto;
 						-moz-object-fit: cover;
 						-webkit-object-fit: cover;
 						-ms-object-fit: cover;
@@ -2049,15 +2084,15 @@ input, select, textarea {
 						position: absolute;
 						right: 0;
 						top: 50%;
-						margin-top: -1.375em;
+						margin-top: 0.35em;
 						width: 2.75em;
 						height: 2.75em;
 						background: #000;
 						background: rgba(0, 0, 0, 0.75);
 						color: #ffffff;
 						text-align: center;
-						line-height: 2.75em;
-						font-size: 1.5em;
+						line-height: 1.75em;
+						font-size: calc(1.2em + 1vw);
 						z-index: 1;
 						-moz-transition: width .15s ease-in-out, padding-right .15s ease-in-out;
 						-webkit-transition: width .15s ease-in-out, padding-right .15s ease-in-out;
@@ -2102,7 +2137,7 @@ input, select, textarea {
 
 					#main > .panel.intro header p {
 						letter-spacing: -0.015em;
-						font-size: 1.25em;
+						font-size: calc(1.25em + 1vw);
 						margin: 0.25em 0 0 0;
 					}
 
@@ -2139,7 +2174,7 @@ input, select, textarea {
 					}
 
 						#main > .panel.intro header p {
-							font-size: 1em;
+							font-size: calc(0.5em + 1vw);
 							margin: 0.25em 0 0 0;
 						}
 
@@ -2151,7 +2186,7 @@ input, select, textarea {
 		color: rgba(255, 255, 255, 0.45);
 		text-align: center;
 		padding: 2.5em 0 1px 0;
-		font-size: 0.75em;
+		font-size: calc(0.5em + 1vw);
 	}
 
 		#footer a {
@@ -2194,3 +2229,24 @@ input, select, textarea {
 			}
 
 		}
+
+ /* Mis cambios generales obligados */
+ 	p, blockquote, code {
+		font-size: calc(3px+6vm);
+		size-adjust: auto;
+	}	
+	optgroup {		
+		font-family: "Fira Sans", sans-serif;
+		background-color:white;
+		border:none;				
+		margin-right: 5px;
+		margin-top: -1em;	
+		disable;	
+	}	
+	optgroup option {
+		font-size: small;
+		font-family: "Fira Sans", sans-serif;
+		size-adjust: 97%;
+		box-sizing:calc(50% + 1vw);
+		border-radius: 1em;
+	}

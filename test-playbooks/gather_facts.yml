@@ -1,0 +1,16 @@
+---
+
+- hosts: all
+  vars:
+    play_gather: true
+  gather_facts: "{{ play_gather }}"
+  tasks:
+    - name: set a fact man
+      set_fact:
+        foo: "bar"
+        bar:
+          a:
+            b:
+              - "c"
+              - "d"
+        cacheable: "{{ set_fact_cacheable | default(false) }}"
