@@ -55,21 +55,127 @@
                     <div class="divider-custom-line"></div>                
                 </div>
                 <!-- Contenidos de Kubernetes de EdX course -->
-                <div>
+                <div class="divider-custom">
                     <p class="page-section">
-                        <h2>Refactoring</h2>
-                        <p>
-                            Newer, more modern enterprise posses the knowledge and technoloy to build cloud-native applications that power their business. <br>
-                            Unfortunately, that is not the case for established enterprises running on legacy monolithic applications. Some have tried to run monoliths  as microservices, 
-                            and as one would expect, it did not work very well. The lessons learned were that a monolithic size multi-process application cannot run as a microservice and that other options 
-                            had to be explored. The next natural  step in the path of the monolithic size multi-process application cannot run as a microservice and that other options had to be explored. 
-                            The next natural step in the path of the monolith to microservices transition was refactoring. However, migrating a decades-old application to the cloud through refactoring poses serious 
-                            challeges and the enterprise faces the refactoring approach dilemma: a "Big-bang" approach or an incremental refactoring. A so-called "Big-bang" approach focuses all efforts with the refactoring of the monolith, 
-                            postponing the development and implementation of any new features - essentually delaying progress and possibly, in the process, even breaking the core of the business, the monolith. <br>
-                            An incremental refactoring approach guarantees that new features are developed and incremented as a modern microservices wich are able to communicate with the monolith through APIs, without appending to the 
-                            monolith's code. In the meantime, features are refactored out of the monolith which slowly fades away while all, or most its functionality is modernized into microservices. <br>
-                            This incremental approach offers a gradual transition from a legacy monolith to modern microservices architecture and allows for phased migration of application features into the cloud.
-                        </p>
+                        <div>
+                            <h2>Refactoring</h2>
+                            <p>
+                                Newer, more modern enterprise posses the knowledge and technoloy to build cloud-native applications that power their business. <br> <br>
+                                Unfortunately, that is not the case for established enterprises running on legacy monolithic applications. Some have tried to run monoliths  as microservices, 
+                                and as one would expect, it did not work very well. The lessons learned were that a monolithic size multi-process application cannot run as a microservice and that other options 
+                                had to be explored. The next natural  step in the path of the monolithic size multi-process application cannot run as a microservice and that other options had to be explored. 
+                                The next natural step in the path of the monolith to microservices transition was refactoring. However, migrating a decades-old application to the cloud through refactoring poses serious 
+                                challeges and the enterprise faces the refactoring approach dilemma: a "Big-bang" approach or an incremental refactoring. A so-called "Big-bang" approach focuses all efforts with the refactoring of the monolith, 
+                                postponing the development and implementation of any new features - essentually delaying progress and possibly, in the process, even breaking the core of the business, the monolith. <br> <br>
+                                An incremental refactoring approach guarantees that new features are developed and incremented as a modern microservices wich are able to communicate with the monolith through APIs, without appending to the 
+                                monolith's code. In the meantime, features are refactored out of the monolith which slowly fades away while all, or most its functionality is modernized into microservices. <br> <br>
+                                This incremental approach offers a gradual transition from a legacy monolith to modern microservices architecture and allows for phased migration of application features into the cloud.
+                                Once an enterprise chose the refactoring path, there are other considerations in the process. Which business componentes to separate from the monolith to become distributed microservices, how to decouple the databases 
+                                from the application to separate data complexity from application logic, and how to test the new microservices ant their dependencies, are just a few of the decisions an enterprise is faced with during refactoring. <br> <br>
+                                The refactoring phase slowly transforms the monolith into a cloud-native applicaction which takes full advantage of cloud features, by coding in new programming languages and applying modern architectural patterns. 
+                                Through  refactoring, a legacy monolith application receives a second chance at life - to live on as a modular system adapted to fully integrate with today's fast-paced cloud automation tools and services.
+                            </p>
+                            <hr>                        
+                            <h2>Challenges</h2>
+                            <p>
+                                The refactoring path from a monolith to microservices is not smmoth and without challenges. Not all monoliths are perfect candidates for refactoring, while some may not even "survive" such a modernization pahse. 
+                                When deciding whether a monolith is a possible candidate for refactoring, there are many possible issues to consider. <br> <br>
+                                When considering a legacy Mainframe based system, written in older programming languages - Cobol or Assembler, it may be more economical to just re-built it from the ground up as a cloud-native application. A poorly designed legacy application should 
+                                be re-designed and re-built from scratch following modern architectural patterns for microservices and even containers. Applications tightly coupled with data stores are also poor candidates for refactoring. <br> <br>
+                                Once the monolith survived the refactoring phase, the next challenge is to design mechanismis or find suitable tools to keep alive all the decoupled modules to ensure application resiliency as a whole. <br><br>
+                                Choosing runtimes may be  another challenge. If deploying  many modules on a single physical or virtual server, chances are that differente libraries and runtimes environment may conflict with one another causing errores and failures. 
+                                This forces deployments of single modules per servers in order to separate their dependencies - not an economical way of resource management, and no real segregation of libraries and runtimes, as each server also has an underlying Operating System running 
+                                with its libraries, thus consuming server resources - at times the OS consuming more resources than the application module itself. <br><br>
+                                Ultimately application containers came along, providing encapsulated lightweight runtime environments for application modules. Containers promised consistent software environments for developers, testers, all the way from Development to Production. 
+                                Wide supposrt of containers ensured application portability from physical bare-metal to Virtual Machines, but this time with multiple applications deployed on the very same server, each failures. Other features of containerized application environments are
+                                higher server utilization, individual module scalability, interoperability and easy integration automation tools.                                 
+                            </p>
+                            <hr>
+                            <h2>Objectives</h2>
+                            <p>
+                                <ul>
+                                    <li>Explain what a monolith is.</li>
+                                    <li>Discuss the monolith's challenges in the cloud.</li>
+                                    <li>Explain the concept of microservices.</li>
+                                    <li>Discuss microservices advantages in the cloud.</li>
+                                    <li>Describe the transformation path from a monolith to microservices.</li>
+                                </ul>
+                                Container images allow us to confine the application code, its runtime, and all of its dependencies in a predefined format. The container runtimes like <strong> runC, containerd,</strong> or <strong>cri-o</strong> can use pre-packaged images as a source to create and run one or more 
+                                containers. These runtime are capable of running containers on a single hosts, howeverm in practicem we would like to have a fault-tolerant and scalable solution, achieved by building a single <strong>controller/management unit</strong>, a collection of multiples hosts connected together. <br>
+                                This controller/management unit is generally referred to as a <strong>container orchestrator.</strong> <br><br>
+                                In this chapter, we will  explore why we should use container orchestrators, different implementations of container orchestrators, and where to deploy them.
+                            </p>
+                            <h3>What are containers?</h3>
+                            <p>
+                                Before we dive into container orchestration, let's review first what containers are. <br><br>
+                                <strong>Containers</strong> are an application-centric method to deliver high-performing, scalable applications on any infraestructure of your choice. Containers are best suited to deliver microservices by providing portable, isolated virtual environmets for applications to run without interference from other running applications.
+                                    <div class="container">
+                                        <img src="img/containerDeployment.png" alt="Container Deployment" class="responsive" sizes="" srcset="">
+                                    </div>
+                                <strong>Microservices</strong> are lightweight applications written in various modern programming languages, with specific dependencies, libraries and environmental requirements. To ensure that an application has everythings it needs to run sucessfully it is packaged  together with its dependencies. <br><br>
+                                Container encapsulate microservices and their dependencies but do not run them directly. Containers run container images. <br> <br>
+                                A <strong>container image</strong> bundles the application along with its runtime, libraries and dependencies, and it represents the source of a container deployed to offer an isolated executable environment for the application. Containers can be deployed from a specific image on many platforms, such as workstations, Virtual Machines, public cloud, etc.
+                            </p>
+                            <h3>What is container orchestration?</h3>
+                            <p>
+                                In Development (Dev) environments, running containers on a single host for development and testing of applications may be a suitable option. However, when migrating to Quality Assurance (QA) and Production (Prod) environmets, that is no longer because the applications and services needs to meet specific requirements.
+                                <ul>
+                                    <li>Fault-tolerance</li>
+                                    <li>On-demand scalability</li>
+                                    <li>Optimal resource usage</li>
+                                    <li>Auto-discovery to automatically discover and communicate with each other</li>
+                                    <li>Accessibility from the outside world</li>
+                                    <li>Seamless update/rollback without any downtime</li>
+                                </ul>
+                                <strong>Container orchestrators</strong> are tools which group systems together to form clusters where container's deployment and managements is automated at scale while meeting the requirements mentioned above. <br><br>
+                                With enterpirses containerizing their applications and moving them to the cloud, there is a growing demand for container orchestration solutions. While there many solutions available, some are mere re-distributions of well-estableshed container orchestration tools, enriched with features and, sometimes, with certain limitations in flexibility. <br>
+                                Although not exhaustive, the list below provides a few different container orchestration tools and services available today:
+                                <ul>
+                                    <li>
+                                        <h4>Amazon</h4>
+                                        <strong>Amazon Elastic Container Service</strong> (ECS) <br>
+                                        is a hosted service provided by Amazon Web Services (AWS) to run containers at scale on its infraestructure.
+                                    </li>
+                                    <li>
+                                        <h4>Azure</h4>
+                                        <strong>Azure Container Instances</strong> (ACI) <br>
+                                        is a basic container orchestration service provided by Microsoft Azure.
+                                        <strong>Azure service Fabric</strong> <br>
+                                        Azure Service Fabric is an open source container orchestrator provided by Microsoft Azure.
+                                    </li>
+                                    <li>
+                                        <h4>Kubernetes</h4>
+                                        Is a open source orchestration tool, originally started by Google, today part of the Cloud Native Computing Foundation (CNCF) project.
+                                    </li>
+                                    <li>
+                                        <h4>Marathon</h4>
+                                        is a framework to run containers at scale on Apache Mesos and DC/OS.
+                                    </li>
+                                    <li>
+                                        <h4>Nomad</h4>
+                                        is the container and workload orchestrator provided by HashiCorp.                                        
+                                    </li>
+                                    <li>
+                                        <h4>Docker Swarm</h4>
+                                        is a container orchestrator provided by Docker.Inc, it's part of Docker Engine.
+                                    </li>
+                                </ul>                                
+                            </p>
+                            <h3>Why use container orchestrators?</h3>                            
+                            <p>
+                                Although we can manually maintain a couple of containers or write scripts to manage the llifecycle of dozens of containers, orchestrators make things much easier for users especially when it comes to managing hundreds and thousands of cointainers running on a global infraestructure. <br><br>
+                                Most container orchestrators can:
+                                <ul>
+                                    <li>Group hosts together while creating a cluster</li>
+                                    <li>Schedule containers to run on hosts in the cluster based on resources availability</li>
+                                    <li>Enable containers in a cluster to communicate with each other regardless of the hots they are deployed to in the cluster</li>
+                                    <li>Bind containers and storage resources</li>
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                </ul>
+                            </p>
+                        </div>
                     </p>
                 </div>
                 <hr>

@@ -302,6 +302,14 @@ svg {
   vertical-align: middle;
 }
 
+.responsive {
+  width: 50%;
+  max-width: 80%;
+  border-radius: 2%;
+  margin: 2%;
+  margin-left: 25%;
+}
+
 table {
   caption-side: bottom;
   border-collapse: collapse;
