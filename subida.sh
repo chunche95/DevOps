@@ -11,7 +11,7 @@ git push origin master
 echo "Imágenes subidas"
 
 git add . &&
-git commit -m "Recursos ansible" &&
+git commit -m $1 &&
 git push origin master
 echo "Otros recursos subidos"
 
