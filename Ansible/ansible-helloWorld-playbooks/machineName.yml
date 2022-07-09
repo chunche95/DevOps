@@ -1,0 +1,6 @@
+---
+- hosts: MACHIN_NAME
+  task:
+      - name: Say Hello
+        debug:
+        msg:  'Hello, world'
