@@ -648,7 +648,10 @@ progress {
   margin-right: auto;
   margin-left: auto;
 }
-
+::-webkit-scrollbar {
+  width: 7px;
+  background:#141619;
+}
 @media (min-width: 576px) {
   .container-sm, .container {
     max-width: 540px;
