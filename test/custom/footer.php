@@ -1,4 +1,3 @@
-<?php ?>
 						<!-- Contact -->
                         <article id="contact" class="panel">
 								<header>
@@ -28,24 +27,19 @@
 								
 							</article>
 					</div> <!-- Cierre del main -->
-
 				<!-- Footer -->
 					<div id="footer">
 						<ul class="copyright">
 							<li>&copy; Human Computing 3.0 &REG;.</li><li>Design: <a href="https://github.com/chunche95">Chunche95</a></li>
 						</ul>
 					</div>
-
 			</div> <!-- Wrapper-->
-
 		<!-- Scripts -->
-			<script src="../assets/js/jquery.min.js"></script>
-			<script src="../assets/js/browser.min.js"></script>
-			<script src="../assets/js/breakpoints.min.js"></script>
-			<script src="../assets/js/util.js"></script>
-			<script src="../assets/js/main.js"></script>
+			<script src="./assets/js/jquery.min.js"></script>
+			<script src="./assets/js/browser.min.js"></script>
+			<script src="./assets/js/breakpoints.min.js"></script>
+			<script src="./assets/js/util.js"></script>
+			<script src="./assets/js/main.js"></script>
 			<script src="https://use.fontawesome.com/f47775a990.js"></script>
-
-
 	</body>
 </html>
