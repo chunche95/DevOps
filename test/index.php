@@ -1,4 +1,4 @@
-<?php require('./custom/header.php') ?>
+<?php include('./custom/header.php'); ?>
 				<!-- Main -->
 					<div id="main">
 
@@ -10,7 +10,7 @@
 								</header>
 								<a href="#work" class="jumplink pic">
 									<span class="arrow icon fa-chevron-right"><span>See my work</span></span>
-									<img src="images/Intro.jpg" alt="" />
+									<!-- <img src="images/Intro.jpg" alt="" /> -->
 								</a>
 							</article>
 
@@ -25,4 +25,4 @@
 									<a href="contenido.php" rel="noopener noreferrer">Show me awesome content</a>
 								</p>								
 							</article>
-<?php require('./custom/footer.php') ?>
+<?php include('./custom/footer.php'); ?>
