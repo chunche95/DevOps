@@ -58,6 +58,103 @@
                 <div class="divider-custom">
                     <p class="page-section">
                         <div>
+                            <h1>¿What is Kubernetes?</h1>
+                            <p>
+                                Commonly referred to as K8s, is an orchestration engine for container technologies such as Docker and rkt that is taking over the DevOps scene in the last couple of years. It is already available on Azure, AWS and Google Cloud as a managed service. <br><br>
+                                Kubernetes can speed up the development process by making easy, automated deployments, updates (rolling-update) and by managing our apps and services with almost zero downtime. It also provides self-healing. Kubernetes can detect and restart services 
+                                when a process crashes inside the container. Kubernetes is originally developed by Google, it is open-sourced since its launch and managed by a large community of contributors. <br>
+                                Any developer can package up applications and deploy them on Kubernetes with basic Docker knowledge.
+                                <h2>What is K8S made up of?</h2>
+                                <p>
+                                    <h3>Kubectl</h3>
+                                    <p>
+                                        A CLI tool for Kubernetes.
+                                        <div>
+                                            <img src="img/kubectl.PNG" class="responsive" alt="">
+                                        </div>
+                                        <h4>Master Node</h4>
+                                        <p>
+                                            <div>
+                                                <img src="img/kubectl-master-and-worker.PNG" class="responsive" alt="">
+                                            </div>
+                                            <ul>
+                                                <li>The main machine that control the nodes</li>
+                                                <li>Main entrypoint for all administrative tasks</li>
+                                                <li>It handles the orchestration of the worker nodes</li>
+                                            </ul>
+                                        </p>
+                                        <h4>Worker Node</h4>
+                                        <p>
+                                            <div>
+                                                <img src="img/worker-node.PNG" class="responsive" alt="">
+                                            </div>
+                                            <ul>
+                                                <li>It's a worker machine in Kubernetes (used to be known as minion)</li>
+                                                <li>This machine performs the requested tasks. Each Node is controlled by the Master Node</li>
+                                                <li>Runs containers inside pods</li>
+                                                <li>This's where the Docker engine runs and takes care of downloading images and starting containers</li>
+                                            </ul>
+                                        </p>
+                                        <h4>Kubelet</h4>
+                                        <p>
+                                            <div>
+                                                <img src="img/kubelet.PNG" class="responsive" alt="">
+                                            </div>
+                                            <ul>
+                                                <li>Primary node agent</li>
+                                                <li>Ensures that containers are running and healthy</li>
+                                            </ul>
+                                        </p>
+                                        <h4>Kubernetes Pod</h4>
+                                        <p>
+                                            <ul>
+                                                <li>
+                                                    A Pod can host multiple containers and storage volumes
+                                                </li>                                                     
+                                                <li>
+                                                    Pods are instances of Deployments (see Deployment)
+                                                </li>
+                                                <li>
+                                                    One Deployment can have multiple pods
+                                                </li>
+                                                <li>
+                                                    With Horizontal Pod Autoscaling, Pods of a Deployment can be automatically started and halted based on CPU usage
+                                                </li>
+                                                <li>
+                                                    Containers within the same pod have access to shared volumes
+                                                </li>
+                                                <li>
+                                                    Each Pod has its unique IP Address within the cluster
+                                                </li>
+                                                <li>
+                                                    Pods are up and running until someone (or a controller) destroys them
+                                                </li>
+                                                <li>
+                                                    Any data saved inside the Pod will disappear without a persistent storage
+                                                </li>
+                                            </ul>
+                                            <div>
+                                                <img src="img/kubernetes-pod.PNG" class="responsive" alt="">
+                                            </div>
+                                        </p>
+                                        <h4>Deployment</h4>
+                                        <p>
+                                            <ul>
+                                                <li>A deployment is a blueprint for the Pods to be create (see Pod)</li>
+                                                <li>Handles update of its respective Pods.</li>
+                                                <li>A deployment will create a Pod by it’s spec from the template.</li>
+                                                <li>Their target is to keep the Pods running and update them (with rolling-update) in a more controlled way.</li>
+                                                <li>Pod(s) resource usage can be specified in the deployment.</li>
+                                                <li>Deployment can scale up replicas of Pods.</li>
+                                                <li>kubernetes-deployment</li>
+                                            </ul>
+                                            <div>
+                                                <img src="img/deployment.PNG" class="responsive" alt="">
+                                            </div>
+                                        </p>
+                                    </p>
+                                </p>
+                            </p>
                             <h2>Refactoring</h2>
                             <p>
                                 Newer, more modern enterprise posses the knowledge and technoloy to build cloud-native applications that power their business. <br> <br>
@@ -483,9 +580,9 @@
                             <hr>
                             <h2>Kubernetes for you</h2>
                             <p>
-                                Most of the tutorials runs on Play with K8s Platform. This is a free browser based learning platform for you. Kubernetes tools like kubeadm, kompose & kubectl are already installed for you. All you need is to get started. <br>
-                                
+                                Most of the tutorials runs on Play with K8s Platform. This is a free browser based learning platform for you. Kubernetes tools like kubeadm, kompose & kubectl are already installed for you. All you need is to get started.                                 
                             </p>
+                            <h3></h3>
                             <h2>Web Labs</h2>                            
                             <p>
                                 <a href="https://labs.play-with-k8s.com/" target="_blank" rel="noopener noreferrer">Lab page</a>
