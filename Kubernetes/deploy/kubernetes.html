@@ -170,7 +170,7 @@
                                 This incremental approach offers a gradual transition from a legacy monolith to modern microservices architecture and allows for phased migration of application features into the cloud.
                                 Once an enterprise chose the refactoring path, there are other considerations in the process. Which business componentes to separate from the monolith to become distributed microservices, how to decouple the databases 
                                 from the application to separate data complexity from application logic, and how to test the new microservices ant their dependencies, are just a few of the decisions an enterprise is faced with during refactoring. <br> <br>
-                                The refactoring phase slowly transforms the monolith into a cloud-native applicaction which takes full advantage of cloud features, by coding in new programming languages and applying modern architectural patterns. 
+                                The refactoring phase slowly transforms the monolith into a cloud-native application which takes full advantage of cloud features, by coding in new programming languages and applying modern architectural patterns. 
                                 Through  refactoring, a legacy monolith application receives a second chance at life - to live on as a modular system adapted to fully integrate with today's fast-paced cloud automation tools and services.
                             </p>
                             <hr>                        
@@ -329,7 +329,7 @@
                                         <b>Horizontal scaling</b> - With Kubernetes applications are scaled manually or automatically based on CPU or custom metrics utilization.
                                     </li>
                                     <li>
-                                        <b>Service discovery and load balancing</b> - Containers receive IP addresses from Kubernetes, while it assigns a single Domain Name System (DNS) name to a set of containers to aid in load-balancing requests across the cointainers of the set. 
+                                        <b>Service discovery and load balancing</b> - Containers receive IP addresses from Kubernetes, while it assigns a single Domain Name System (DNS) name to a set of containers to aid in load-balancing requests across the containers of the set. 
                                     </li>
                                 </ul>
                                 Additional fully supported Kubernetes features are:
@@ -620,9 +620,141 @@
                                 </p>
                             </p>
                             <hr>
-                            <h2>Kubernetes Developer Concepts</h2>
+                            <h2>Understanding Kubernetes Developer Concepts</h2>
                             <p>
-                                Pods
+                                Kubernetes has a number of abstractions that map to API objects. These Kubernetes API Object can be used to describe your cluster's desired state which will include info such as applications and workloads running, replicas, container images, networking resources and more. 
+                                This section explain the key concepts relevant from an application developer perspective.
+                            </p>
+                            <h3>POD</h3>
+                            <p>
+                                A Pod is the smallest deployable unit that can be created, scheduled and managed. It's logical collection of containers that belong to an application. Pods are created in a namespace. All containers in a pod share the namespace, volumes and networking stack. This allows containers in the pod to 'find' each other and communicate using <strong><code>localhost</code></strong>.                                
+                                <h4>Create a Pod</h4>
+                                <p>
+                                    Each resource in Kubernetes can be defined using a configuration file. For example, an NGINX pod can be defined with configuration file shown in below:
+                                    <blockquote>
+                                        <code>
+<pre>
+apiVersion: v1
+kind: Pod
+metadata:
+    name: nginx-pod 
+    labels:
+        name: nginx-pod 
+    spec:
+        containers:
+        - name: nginx
+          image: nginx:latest 
+          ports:
+          - containerPort: 80
+</pre>                                            
+                                        </code>
+                                    </blockquote>
+                                    Create the pod as shown below:
+                                    <blockquote>
+                                        <code>
+                                            $ kubectl create -f template/pod.yaml <br>
+                                            <i>pod "nginx-pod" created</i>                                            
+                                        </code>
+                                    </blockquote>
+                                    Get the list of pod:
+                                    <blockquote>
+                                        <code>
+<pre>
+$ kubectl get pods
+NAME        READY   STATUS   RESTARTS    AGE
+nginx-pod   1/1     Running  0            30s
+</pre>                                            
+                                        </code>
+                                    </blockquote>
+                                    Verify that the pod came up fine:
+                                    <blockquote>
+                                        <code>
+                                            kubectl -n default port-forward $(kubectl -n default get pod -l name-nginx-pod -o jsonpath='{.items[0].metadata.name}') 8080:80 & open http:/localhost:8080/
+                                        </code>
+                                    </blockquote>
+                                    This open up a browser window and show the nginx main page. 
+                                    <div>
+                                        <img src="" class="responsive" alt="Nginx main page using a POD with Kubernetes">
+                                    </div>
+                                    If the containers in the pod generate logs, the they can be using  the command shown:
+                                    <blockquote>
+                                        <code>
+                                            <pre>
+$ kubectl logs nginx-pod                                                 
+                                            </pre>
+                                        </code>
+                                    </blockquote>                                    
+                                </p>
+                                <h4>Delete a Pod</h4>
+                                <p>
+                                    Delete the pod as shown below:
+                                    <blockquote>
+                                        <code>
+                                            $ kubectl delete -f template/pod.yaml
+                                        </code>
+                                    </blockquote>                                                                        
+                                </p>
+                                <h4>Deployment</h4>
+                                <p>
+                                    A "desired state", such as 4 replicas of a pod, can be described in a Deployment object. The Deployment controller in Kubernetes cluster then ensures the desired and the actual state are matching. Deployment ensures the recreation of a pod when the worker node fails or reboots. 
+                                    If a pod dies, then a new pod us started to ensure the desired vs actual matches. It also allows both up-and down-scaling the number of replicas. This is achieved using ReplicaSet. The Deployment manages the ReplicaSet and provides updates to those pods. 
+                                    <h5>Create a Deployment</h5>
+                                    <p>
+                                        The following example will create a Deployment with 3 replicas of Nginx base image. Let's begin with the template:
+                                        <blockquote>
+                                            <code>
+<pre>
+apiVersion: extensions/v1beta1
+kind: Deployment # kubernetes object type
+metadata: 
+    name: nginx-deployment # deployment name 
+spec: 
+    replicas: 3 # number of replicas 
+    template:
+        metadata:
+            labels:
+                app: nginx # pod labels
+        spec: 
+            containers:
+            - name: nginx # container name
+              image: nginx:1.12.1 # nginx image 
+              imagePullPolicy: IfNotPresent # if exists, will not pull new image 
+              ports: # container and host port assignments
+              - containerPort: 80
+              - containerPort: 443
+</pre>                                                
+                                            </code>
+                                        </blockquote>
+                                        This deployment will create 3 instances of Nginx image. Run the following command to create Deployment:
+                                        <blockquote>
+                                            <code>
+<pre>
+$ kubectl create -f template/deployment.yaml --record
+deployment "nginx-deployment" created 
+</pre>                                                
+                                            </code>
+                                        </blockquote>
+                                        The <code>--record</code> flag will track changes made through each revision. To monitor deployment  rollout status: 
+                                        <blockquote>
+                                            <code>
+<pre>
+$ kubectl rollout  status deployment/nginx-deployment 
+deployment "nginx-deployment" successfully rolled out
+</pre>                                                
+                                            </code>
+                                        </blockquote>
+                                        A Deployment creates a ReplicaSet to manage the number of replicas. Let's take a look at existing deplyments and replica set. Get the deployments: 
+                                        <blockquote>
+                                            <code>
+<pre>
+$ kubectl get deployments 
+NAME            DESIRED     CURRENT     UP-TO-DATE      AVAILABLE       AGE
+nginx-deployment  3         3           3               3               20s
+</pre>                                                
+                                            </code>
+                                        </blockquote>
+                                    </p>
+                                </p> 
                             </p>
                             <hr>                            
                             <h2>Web Labs</h2>                            
