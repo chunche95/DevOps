@@ -1,5 +1,6 @@
-<img src="images/Introduccion.png"> 
+<img src="styles/assets/img/banner-mybanner.png"> 
 <br>
+
 <h1> Ansible. </h1>
 
 Tecnología para el aprovisionamiento de sistemas. 
@@ -26,3 +27,4 @@ En caso de no 'existir' el módulo para nuestro pryoyecto, existe <i>GALAXY</i> 
 
 <i>ANSIBLE es de software libre</i> y gestionable por SSH, además funciona en cualquier UNIX. <br>
 
+<img src="styles/assets/img/Introduccion.jpg"> 
