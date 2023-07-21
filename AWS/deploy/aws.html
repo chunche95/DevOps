@@ -1,0 +1,1052 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Paulino Bermudez | HC3.0 - Amazon Web Services</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="../assets/favicon.ico" />
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="../css/styles.css" rel="stylesheet" />
+    </head>
+    <body id="page-top">
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
+            <div class="container">
+                <a class="navbar-brand" href="#page-top">Up</a>
+                <button class="navbar-toggler text-uppercase font-weight-bold bg-primary text-white rounded" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    Menu
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="../index.html">Home</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#contenidos">Content</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Masthead-->
+        <header class="masthead bg-primary text-white text-center">
+            <div class="container d-flex align-items-center flex-column">
+                <!-- Masthead Heading-->
+                <h1 class="masthead-heading text-uppercase mb-0">AWS.</h1>
+                <!-- Masthead Subheading-->
+                <p class="masthead-subheading font-weight-light mb-0"></p>
+            </div>
+        </header>
+        <!-- Contents Section-->
+        <section class="page-section portfolio" id="contenidos">
+            <div class="container">
+                <!-- Section Heading-->
+                <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Contents</h2>
+                <!-- Icon Divider-->
+                <div class="divider-custom">
+                    <div class="divider-custom-line"></div>
+                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                    <div class="divider-custom-line"></div>                
+                </div>
+                <!-- Contenidos de Kubernetes de EdX course -->
+                <div class="divider-custom">
+                    <p class="page-section">
+                        <div>
+                            <h1>¿What is Amazon Web Services?</h1>
+                            <p>
+                               
+                                <h2>What is K8S made up of?</h2>
+                                <p>
+                                    <h3>Kubectl</h3>
+                                    <p>
+                                        A CLI tool for Kubernetes.
+                                        <div>
+                                            <img src="img/kubectl.PNG" class="responsive" alt="">
+                                        </div>
+                                        <h4>Master Node</h4>
+                                        <p>
+                                            <div>
+                                                <img src="img/kubectl-master-and-worker.PNG" class="responsive" alt="">
+                                            </div>
+                                            <ul>
+                                                <li>The main machine that control the nodes</li>
+                                                <li>Main entrypoint for all administrative tasks</li>
+                                                <li>It handles the orchestration of the worker nodes</li>
+                                            </ul>
+                                        </p>
+                                        <h4>Worker Node</h4>
+                                        <p>
+                                            <div>
+                                                <img src="img/worker-node.PNG" class="responsive" alt="">
+                                            </div>
+                                            <ul>
+                                                <li>It's a worker machine in Kubernetes (used to be known as minion)</li>
+                                                <li>This machine performs the requested tasks. Each Node is controlled by the Master Node</li>
+                                                <li>Runs containers inside pods</li>
+                                                <li>This's where the Docker engine runs and takes care of downloading images and starting containers</li>
+                                            </ul>
+                                        </p>
+                                        <h4>Kubelet</h4>
+                                        <p>
+                                            <div>
+                                                <img src="img/kubelet.PNG" class="responsive" alt="">
+                                            </div>
+                                            <ul>
+                                                <li>Primary node agent</li>
+                                                <li>Ensures that containers are running and healthy</li>
+                                            </ul>
+                                        </p>
+                                        <h4>Kubernetes Pod</h4>
+                                        <p>
+                                            <ul>
+                                                <li>
+                                                    A Pod can host multiple containers and storage volumes
+                                                </li>                                                     
+                                                <li>
+                                                    Pods are instances of Deployments (see Deployment)
+                                                </li>
+                                                <li>
+                                                    One Deployment can have multiple pods
+                                                </li>
+                                                <li>
+                                                    With Horizontal Pod Autoscaling, Pods of a Deployment can be automatically started and halted based on CPU usage
+                                                </li>
+                                                <li>
+                                                    Containers within the same pod have access to shared volumes
+                                                </li>
+                                                <li>
+                                                    Each Pod has its unique IP Address within the cluster
+                                                </li>
+                                                <li>
+                                                    Pods are up and running until someone (or a controller) destroys them
+                                                </li>
+                                                <li>
+                                                    Any data saved inside the Pod will disappear without a persistent storage
+                                                </li>
+                                            </ul>
+                                            <div>
+                                                <img src="img/kubernetes-pod.PNG" class="responsive" alt="">
+                                            </div>
+                                        </p>
+                                        <h4>Deployment</h4>
+                                        <p>
+                                            <ul>
+                                                <li>A deployment is a blueprint for the Pods to be create (see Pod)</li>
+                                                <li>Handles update of its respective Pods.</li>
+                                                <li>A deployment will create a Pod by it’s spec from the template.</li>
+                                                <li>Their target is to keep the Pods running and update them (with rolling-update) in a more controlled way.</li>
+                                                <li>Pod(s) resource usage can be specified in the deployment.</li>
+                                                <li>Deployment can scale up replicas of Pods.</li>
+                                                <li>kubernetes-deployment</li>
+                                            </ul>
+                                            <div>
+                                                <img src="img/deployment.PNG" class="responsive" alt="">
+                                            </div>
+                                        </p>
+                                    </p>
+                                </p>
+                            </p>
+                            <hr>
+                            <h2>Refactoring</h2>
+                            <p>
+                                Newer, more modern enterprise posses the knowledge and technoloy to build cloud-native applications that power their business. <br> <br>
+                                Unfortunately, that is not the case for established enterprises running on legacy monolithic applications. Some have tried to run monoliths  as microservices, 
+                                and as one would expect, it did not work very well. The lessons learned were that a monolithic size multi-process application cannot run as a microservice and that other options 
+                                had to be explored. The next natural  step in the path of the monolithic size multi-process application cannot run as a microservice and that other options had to be explored. 
+                                The next natural step in the path of the monolith to microservices transition was refactoring. However, migrating a decades-old application to the cloud through refactoring poses serious 
+                                challenges and the enterprise faces the refactoring approach dilemma: a "Big-bang" approach or an incremental refactoring. A so-called "Big-bang" approach focuses all efforts with the refactoring of the monolith, 
+                                postponing the development and implementation of any new features - essentually delaying progress and possibly, in the process, even breaking the core of the business, the monolith. <br> <br>
+                                An incremental refactoring approach guarantees that new features are developed and incremented as a modern microservices wich are able to communicate with the monolith through APIs, without appending to the 
+                                monolith's code. In the meantime, features are refactored out of the monolith which slowly fades away while all, or most its functionality is modernized into microservices. <br> <br>
+                                This incremental approach offers a gradual transition from a legacy monolith to modern microservices architecture and allows for phased migration of application features into the cloud.
+                                Once an enterprise chose the refactoring path, there are other considerations in the process. Which business componentes to separate from the monolith to become distributed microservices, how to decouple the databases 
+                                from the application to separate data complexity from application logic, and how to test the new microservices ant their dependencies, are just a few of the decisions an enterprise is faced with during refactoring. <br> <br>
+                                The refactoring phase slowly transforms the monolith into a cloud-native application which takes full advantage of cloud features, by coding in new programming languages and applying modern architectural patterns. 
+                                Through  refactoring, a legacy monolith application receives a second chance at life - to live on as a modular system adapted to fully integrate with today's fast-paced cloud automation tools and services.
+                            </p>
+                            <hr>                        
+                            <h2>Challenges</h2>
+                            <p>
+                                The refactoring path from a monolith to microservices is not smmoth and without challenges. Not all monoliths are perfect candidates for refactoring, while some may not even "survive" such a modernization pahse. 
+                                When deciding whether a monolith is a possible candidate for refactoring, there are many possible issues to consider. <br> <br>
+                                When considering a legacy Mainframe based system, written in older programming languages - Cobol or Assembler, it may be more economical to just re-built it from the ground up as a cloud-native application. A poorly designed legacy application should 
+                                be re-designed and re-built from scratch following modern architectural patterns for microservices and even containers. Applications tightly coupled with data stores are also poor candidates for refactoring. <br> <br>
+                                Once the monolith survived the refactoring phase, the next challenge is to design mechanismis or find suitable tools to keep alive all the decoupled modules to ensure application resiliency as a whole. <br><br>
+                                Choosing runtimes may be  another challenge. If deploying  many modules on a single physical or virtual server, chances are that differente libraries and runtimes environment may conflict with one another causing errores and failures. 
+                                This forces deployments of single modules per servers in order to separate their dependencies - not an economical way of resource management, and no real segregation of libraries and runtimes, as each server also has an underlying Operating System running 
+                                with its libraries, thus consuming server resources - at times the OS consuming more resources than the application module itself. <br><br>
+                                Ultimately application containers came along, providing encapsulated lightweight runtime environments for application modules. Containers promised consistent software environments for developers, testers, all the way from Development to Production. 
+                                Wide supposrt of containers ensured application portability from physical bare-metal to Virtual Machines, but this time with multiple applications deployed on the very same server, each failures. Other features of containerized application environments are
+                                higher server utilization, individual module scalability, interoperability and easy integration automation tools.                                 
+                            </p>
+                            <hr>
+                            <h2>Objectives</h2>
+                            <p>
+                                <ul>
+                                    <li>Explain what a monolith is.</li>
+                                    <li>Discuss the monolith's challenges in the cloud.</li>
+                                    <li>Explain the concept of microservices.</li>
+                                    <li>Discuss microservices advantages in the cloud.</li>
+                                    <li>Describe the transformation path from a monolith to microservices.</li>
+                                </ul>
+                                Container images allow us to confine the application code, its runtime, and all of its dependencies in a predefined format. The container runtimes like <strong> runC, containerd,</strong> or <strong>cri-o</strong> can use pre-packaged images as a source to create and run one or more 
+                                containers. These runtime are capable of running containers on a single hosts, howeverm in practicem we would like to have a fault-tolerant and scalable solution, achieved by building a single <strong>controller/management unit</strong>, a collection of multiples hosts connected together. <br>
+                                This controller/management unit is generally referred to as a <strong>container orchestrator.</strong> <br><br>
+                                In this chapter, we will  explore why we should use container orchestrators, different implementations of container orchestrators, and where to deploy them.
+                            </p>
+                            <h3>What are containers?</h3>
+                            <p>
+                                Before we dive into container orchestration, let's review first what containers are. <br><br>
+                                <strong>Containers</strong> are an application-centric method to deliver high-performing, scalable applications on any infrastructure of your choice. Containers are best suited to deliver microservices by providing portable, isolated virtual environmets for applications to run without interference from other running applications.
+                                    <div class="container">
+                                        <img src="img/containerDeployment.png" alt="Container Deployment" class="responsive" sizes="" srcset="">
+                                    </div>
+                                <strong>Microservices</strong> are lightweight applications written in various modern programming languages, with specific dependencies, libraries and environmental requirements. To ensure that an application has everythings it needs to run sucessfully it is packaged  together with its dependencies. <br><br>
+                                Container encapsulate microservices and their dependencies but do not run them directly. Containers run container images. <br> <br>
+                                A <strong>container image</strong> bundles the application along with its runtime, libraries and dependencies, and it represents the source of a container deployed to offer an isolated executable environment for the application. Containers can be deployed from a specific image on many platforms, such as workstations, Virtual Machines, public cloud, etc.
+                            </p>
+                            <h3>What is container orchestration?</h3>
+                            <p>
+                                In Development (Dev) environments, running containers on a single host for development and testing of applications may be a suitable option. However, when migrating to Quality Assurance (QA) and Production (Prod) environmets, that is no longer because the applications and services needs to meet specific requirements.
+                                <ul>
+                                    <li>Fault-tolerance</li>
+                                    <li>On-demand scalability</li>
+                                    <li>Optimal resource usage</li>
+                                    <li>Auto-discovery to automatically discover and communicate with each other</li>
+                                    <li>Accessibility from the outside world</li>
+                                    <li>Seamless update/rollback without any downtime</li>
+                                </ul>
+                                <strong>Container orchestrators</strong> are tools which group systems together to form clusters where container's deployment and managements is automated at scale while meeting the requirements mentioned above. <br><br>
+                                With enterpirses containerizing their applications and moving them to the cloud, there is a growing demand for container orchestration solutions. While there many solutions available, some are mere re-distributions of well-estableshed container orchestration tools, enriched with features and, sometimes, with certain limitations in flexibility. <br>
+                                Although not exhaustive, the list below provides a few different container orchestration tools and services available today:
+                                <ul>
+                                    <li>
+                                        <h4>Amazon</h4>
+                                        <strong>Amazon Elastic Container Service</strong> (ECS) <br>
+                                        is a hosted service provided by Amazon Web Services (AWS) to run containers at scale on its infrastructure.
+                                    </li>
+                                    <li>
+                                        <h4>Azure</h4>
+                                        <strong>Azure Container Instances</strong> (ACI) <br>
+                                        is a basic container orchestration service provided by Microsoft Azure.
+                                        <strong>Azure service Fabric</strong> <br>
+                                        Azure Service Fabric is an open source container orchestrator provided by Microsoft Azure.
+                                    </li>
+                                    <li>
+                                        <h4>Kubernetes</h4>
+                                        Is a open source orchestration tool, originally started by Google, today part of the Cloud Native Computing Foundation (CNCF) project.
+                                    </li>
+                                    <li>
+                                        <h4>Marathon</h4>
+                                        is a framework to run containers at scale on Apache Mesos and DC/OS.
+                                    </li>
+                                    <li>
+                                        <h4>Nomad</h4>
+                                        is the container and workload orchestrator provided by HashiCorp.                                        
+                                    </li>
+                                    <li>
+                                        <h4>Docker Swarm</h4>
+                                        is a container orchestrator provided by Docker.Inc, it's part of Docker Engine.
+                                    </li>
+                                </ul>                                
+                            </p>
+                            <h3>Why use container orchestrators?</h3>                            
+                            <p>
+                                Although we can manually maintain a couple of containers or write scripts to manage the llifecycle of dozens of containers, orchestrators make things much easier for users especially when it comes to managing hundreds and thousands of containers running on a global infrastructure. <br><br>
+                                Most container orchestrators can:
+                                <ul>
+                                    <li>Group hosts together while creating a cluster</li>
+                                    <li>Schedule containers to run on hosts in the cluster based on resources availability</li>
+                                    <li>Enable containers in a cluster to communicate with each other regardless of the hots they are deployed to in the cluster</li>
+                                    <li>Bind containers and storage resources</li>
+                                    <li>Group sets of similar containers and bind them to load-balancing constructs to simplify access to containerized applications by creating an interface, a level of abstraction between the containers and the client</li>
+                                    <li>Manage and optimize resource usage</li>
+                                    <li>Allow for implementation of policies to secure access to applications running inside containers</li>
+                                </ul>
+                                With all these configurable yet flexible features, container orchestrators are an obvious choice when it comes to managing containerized applications at scale. In this, we will explore Kubernetes, one of the most in-demand container orchestration tools available today.
+                            </p>
+                            <h3>Where to deploy container orchestrator?</h3>
+                            <p>
+                                Most container orchestrators can be deployed on the infrastructure of otur choice - on bare metal, Virtual Machines, on-premises, on public and hybrid cloud. <br>
+                                Kubernetes, for example, can be deployed on a workstation, with or without  an isolation layer such as a local hypervisor or container runtime, inside a company's data center, in the cloud on AWS Elastic COmpute Cloud (EC2) instances, Google COmpute Engine (GCE) VMs, DigitalOcean Droplets, OpenStack, etc. <br><br>
+                                There are turnkey solutions which allow Kubernetes clusters to be installed, with only a  few commands, on top of cloud  Infraestructures-as-a-Service, more specifically the managed Kubernetes as-a-Service solution, offered and hosted by the major cloud providers, such as Amazon Elastic Kubernetes Service (Amazon EKS), 
+                                Azure Kubernetes Service (AKS), DigitalOcean Kubernetes, Google Kubernetes Engine (GKE), IBM Cloud Kubernetes Service, Oracle Container Engine for Kubernetes, or VmWare Tanzu Kubernetes Grid.
+                            </p>
+                            <hr>
+                            <h2>Evolution of Kubernetes</h2>
+                            <p>
+                                In this chapter, we describe <b>Kubernetes</b>, its features, and the reasons why you should use it. We will explore the evolution of Kubernetes from <b>Borg</b>, Google's very own distributed workload manager. <br><br>
+                                We will also learn about the <b>Cloud Native Computing Foundation (CNCF)</b>, which currently hosts the Kubernetes project, along with other popular cloud-native projects, such as Prometheus, Fluentd, cri-o, containerd, Helm, Envoy and Contour , just to name a few.
+                            </p>
+                            <h3>What is Kubernetes?</h3>
+                            <p>
+                                According to the <strong>Kubernetes</strong> website, "<i>Kubernetes is an open-source system form automating deployment, scaling, and management of containerized applications</i>". <br>
+                                Kubernetes comes from the Greek work <i>κυβερνήτης</i>, which means helmsman or ship pilot. With this analogy in mind, we can think of Kubernetes as the pilot on a ship of containers. Kubernetes is also referred to as <b>K8s</b> - "Kate's", as there are 8 characters between k an s. <br><br>
+                                Kubernetes is highly inspired by the Google Borg System, a container and workload orchestrator for its global operations for more than a decade. It's an open source project written in the Go languages and licensed under the Apache License, version 2.0. <br><br>
+                                Kubernetes was started by Google and , with its v1.0 release in July 2015, Google donated it to the Cloud Native Computing Foundation (CNCF), one of the largest sub-foundations of the Linux Foundation. <br>
+                                New Kubernetes version are released in 4 months cycles. The current stable version is 1.23 (as of April 2022). 
+                            </p>
+                            <h3>From Borg to Kubernetes</h3>
+                            <p>
+                                According to the abstract of Google's Borg paper, published in 2015. <br>
+                                <i>
+                                    " Google's Borg system is a cluster manager that runs hundreds of thousands of jobs, from many thousands of different applications, across a number of clusters each with up to tens of thousands of machines ". 
+                                </i> <br>
+                                For more than a decade, Borg has been Google's secret, running its worldwide  containerized workloads in production. Services we use from Google, such as Gmail, Drive, Maps, Doccs, etc., they are all serviced using Borg. <br><br>
+                                Among the initial authors of Kubernetes were Google employees who have used Borg and developed it in the past. They poured in their valuable knowledge and experience while desgined Kubernetes. Several features/objects of Kubernetes that can be traced back to Borg, or to lessons learned from it, are:
+                                <ul>
+                                    <li>API servers</li>
+                                    <li>Pods</li>
+                                    <li>IP-per-Pod</li>
+                                    <li>Services</li>
+                                    <li>Labels</li>
+                                </ul>
+                                We will explore all of them, and more, in this space.
+                            </p>
+                            <h3>Kubernetes Features</h3>
+                            <p>
+                                Kubernetes offers a very rich set of features for container orchestration. Some of its fully supported features are:
+                                <ul>
+                                    <li>
+                                        <b>Automatic bin packing</b> - Kubernetes automatically schedules containers based on resource needs and contraints, to maximize utilization without sacrificing availability.
+                                    </li>
+                                    <li>
+                                        <b>Designed for externsibility</b> - A Kubernetes cluster can be extended with new custom features without modifying the upstram source code.
+                                    </li>
+                                    <li>
+                                        <b>Self-healing</b> - Kubernetes automatically replaces and reschedules containers from failed nodes. It terminates and then restarts containers that become unresponsive to health checks, based on existing rules/policy. It also prevents traffic from being routed to unresponsive containers.
+                                    </li>
+                                    <li>
+                                        <b>Horizontal scaling</b> - With Kubernetes applications are scaled manually or automatically based on CPU or custom metrics utilization.
+                                    </li>
+                                    <li>
+                                        <b>Service discovery and load balancing</b> - Containers receive IP addresses from Kubernetes, while it assigns a single Domain Name System (DNS) name to a set of containers to aid in load-balancing requests across the containers of the set. 
+                                    </li>
+                                </ul>
+                                Additional fully supported Kubernetes features are:
+                                <ul>
+                                    <li>
+                                        <b>Automated rollouts and rollbacks</b> - Kubernetes seamlessly rolls out and roll back application updates and configuration changes, constantly monitoring the application's health to prevent any downtime.
+                                    </li>
+                                    <li>
+                                        <b>Secret and configuration management</b> -  Kubernetes manages sensitives data and configuration details for an application separately from the container image, in order to avoid a re-build of the respective image. Secrets consiste of sensitive/confidential information passed to the application without revealing the sensitive content to 
+                                        the stack configuration, like on GitHub.
+                                    </li>
+                                    <li>
+                                        <b>Storage orchestration</b> - Kubernetes automatically mounts software-defined storage (SDS) solutions to containers from local storage, external cloud providers, distributed storaage, or network storage systems.
+                                    </li>
+                                    <li>
+                                        <b>Batch execution</b> - Kubernetes support batch execution, long-running jobs, and replaces failed containers.
+                                    </li>
+                                    <li>
+                                        <b>IPv4/IPv6 dual-stack</b> - Kubernetes supports both IPv4 and IPv6 addresses.
+                                    </li>
+                                </ul>
+                                There are many additional features currently in alpha or beta phase. They will add great value to any Kubernetes deployment once they become stable features. For example, support for role-based access control (RBAC) is stable only as of the Kubernetes 1.8 release.                                 
+                            </p>
+                            <h3>Why use Kubernetes?</h3>
+                            <p>
+                               Another ont of Kubernetes' strenghts is portability. It can be deployed in many environments such as local or remote Virtual Machines, bare metal, or in public/private/hybrid/multi-cloud setups. <br><br>
+                               Kubernetes  extensibility allows it to support and to be supported by many 3rd party open source tools which enhance Kubernetes' capabilities and provide a feature-rich experience to its users. It's architecture is modular and pluggable. Not only that it orchestrates modular, decoupled microservices type applications, but also its architecture follows decoupled microservices patterns. 
+                               Kubernetes' functionality can be extended by writing custom resources, operators, custom APIs, scheduling rules or plugins.
+
+                               For a successful open source project, the community is as important as having great code. Kubernetes is supported by a thriving community across the world. It has more than 3,100 contributors, who, over time, have pushed over 106,000 commits. There are meet-up groups in different cities and countries which meet regularly to discuss Kubernetes and its ecosystem. 
+                               The community is divided into Special Interest Groups (SIGs), groups which focus on special topics, such as scaling, bare metal, networking, storage, etc. 
+                               We will learn more about them in our last chapter, Kubernetes Community.
+                            </p>
+                            <h3>Kubernetes users</h3>
+                            <p>
+                                In less than a decade since its debug Kubernetes has cbecome the platform of choice for many enterprises of various sizes to run their workloads. It's a solution dor workload management in banking, education, finance and investments, gaming, information technology, media  and streaming, online retail, ridesharing, telecomunications, nueclar research and many other industries. There are numerous user 
+                                case studies and success stories on the Kubernetes website. P.e: BlaBlaCar, BlackRock, Box, ING, IBM, Nokia or Wikimedia and any more.
+                            </p>
+                            <h3>Cloud native computing foundation (CNCF)</h3>
+                            <p>
+                                The Cloud Native Computing Foundation is one of the largest sub-projects hosted by the Linux Foundation. CNCF aims to accelerate the adoption of containers, microservices and cloud native applications.
+                                CNCF hosts a multitude of projects, with more to be addded in the future. CNCF provides resources to each of the projects but at the same time, each project continues to operate independently under pre-existing governance structure and with  its existing maintainers. Projects within CNCF are categorized based on their maturity levels: Sandbox, incubating and graduated. <br>
+                                Popular graduated projects:
+                                <ul>
+                                    <li>Kubernetes container orchestrator</li>
+                                    <li>etcd distributed key-value store</li>
+                                    <li>CoreDNS DNS server</li>
+                                    <li>containerd container runtime</li>
+                                    <li>Envoy cloud native proxy</li>
+                                    <li>Prometheus monitorin system and time series DB</li>
+                                </ul>
+                                Key incubating projects, for example:
+                                <ul>
+                                    <li>CNI for Linux containers networking</li>
+                                    <li>flux continuous delivery for Kubernetes</li>
+                                    <li>Knative serverless containers in Kubernetes</li>
+                                    <li>KubeVirt Kubernetes based Virtual Machine manager</li>
+                                    <li>Notary for data security</li>
+                                </ul>
+                                There are many dynamic projects in the CNCF Sandbox geared towards metrics, monitoring, identity, scripting, serverless, nodeless, edge, expecting to achieve Incubating and possibly Graduated status. While many active projects are preparing for takeoff, others are being archived once they become less active and no longer in demand. The first projects to be archived are the rkt container runtime and the distributed OpenTracing.
+                                The projects under CNCF cover the entire lifecycle of a cloud-native application, from its execution using container runtimes, to its monitoring and logging. This is very important to meet the goals of CNCF.
+                            </p>
+                            <hr>
+                            <h2>Kubernetes architecture</h2>
+                            <p>
+                                The components of a control plane node, the role of the worker nodes, the cluster state management with etcd and the network setup requirements. We will also learn about the Container Network Interface (CNI), as Kubernetes network specification. <br><br>
+                                At a very high level, Kubernetes is a cluster of compute systems categorized by their  distinct roles:
+                                <ul>
+                                    <li>One or more control plane nodes</li>
+                                    <li>One or more worker nodes (optional but recommended)</li>
+                                </ul>
+                                <img src="img/componentsOfKubernetesArch.PNG" class="responsive" alt="" srcset="">                                                                
+                            </p>
+                            <h3>Control plane node</h3>
+                            <p>
+                                The control plane node provides a running environment for the control plane agents responsible for managing the state of a Kubernetes cluster, and it is the brain behind all operations inside the cluster. The control plane components are agents with very distinct roles in the cluster's management. 
+                                In order to communicate with the Kubernetes cluster, users send requests to the control plane via a Command Line Interface (CLI) tool, a Web User-Interface (Web UI) Dashboard, or an Application Programming Interface (API).                                
+                                It is important to keep the control plane running at all costs. Losing the control plane may introduce downtime, causing service disruption to clients, with possible loss of business. To ensure the control plane's fault tolerance, control plane node replicas can be added to the cluster, 
+                                configured in High-Availability (HA) mode. While only one of the control plane nodes is dedicated to actively manage the cluster, the control plane components stay in sync across the control plane node replicas. This type of configuration adds resiliency to the cluster's control plane, should the active control plane node fail.                            
+                                To persist the Kubernetes cluster's state, all cluster configuration data is saved to a distributed key-value store which only holds cluster state related data, no client workload generated data. The key-value store may be configured on the control plane node (stacked topology), or on its dedicated host (external topology) to 
+                                help reduce the chances of data store loss by decoupling it from the other control plane agents. <br><br>                                
+                                In the stacked key-value store topology, HA control plane node replicas ensure the key-value store's resiliency as well. However, that is not the case with external key-value store topology, where the dedicated key-value store hosts have to be separately replicated for HA, a configuration that introduces the need for additional 
+                                hardware, hence additional operational costs.
+                                <h4>Components</h4>
+                                A control plane node runs the following essential control plane componentes and agents:
+                                <ul>
+                                    <li>API server</li>
+                                    <li>Scheduler</li>
+                                    <li>Controller managers</li>
+                                    <li>Key-Value data store</li>
+                                </ul>
+                                In additional, the control plane node runs:
+                                <ul>
+                                    <li>Container runtime</li>
+                                    <li>Node agent</li>
+                                    <li>Proxy</li>
+                                    <li>Optional addons for cluster level monitoring and logging</li>
+                                </ul>
+                                <h5>API servver</h5>
+                                <p>
+                                    All the administrative tasks are coordinated by the kube-apiserver, a central control plane component running on the control plane node. The API Server intercepts RESTful calls from users, administrators, developers, operators and external agents, then validates and processes them. During processing the API Server reads the Kubernetes cluster's current state from the key-value 
+                                    store, and after a call's execution, the resulting state of the Kubernetes cluster is saved in the key-value store for persistence. The API Server is the only control plane component to talk to the key-value store, both to read from and to save Kubernetes cluster state information - acting as a middle interface for any other control plane agent inquiring about the cluster's state. <br><br>
+                                    The API Server is highly configurable and customizable. It can scale horizontally, but it also supports the addition of custom secondary API Servers, a configuration that transforms the primary API Server into a proxy to all secondary, custom API Servers, routing all incoming RESTful calls to them based on custom defined rules.                                
+                                </p>
+                                <h5>Scheduler</h5>
+                                <p>
+                                    The role of the kube-scheduler is to assign new workload objects, such as pods encapsulating containers, to nodes - typically worker nodes. During the scheduling process, decisions are made based on current Kubernetes cluster state and new workload object's requirements. The scheduler obtains from the key-value store, via the API Server, resource usage data for each worker node in the cluster.  <br>
+                                    The scheduler also receives from the API Server the new workload object's requirements which are part of its configuration data. Requirements may include constraints that users and operators set, such as scheduling work on a node labeled with disk==ssd key-value pair. The scheduler also takes into account Quality of Service (QoS) requirements, data locality, affinity, anti-affinity, taints, toleration, cluster topology, etc. 
+                                    Once all the cluster data is available, the scheduling algorithm filters the nodes with predicates to isolate the possible node candidates which then are scored with priorities in order to select the one node that satisfies all the requirements for hosting the new workload. The outcome of the decision process is communicated back to the API Server, which then delegates the workload deployment with other control plane agents. <br><br>
+                                    The scheduler is highly configurable and customizable through scheduling policies, plugins, and profiles. Additional custom schedulers are also supported, then the object's configuration data should include the name of the custom scheduler expected to make the scheduling decision for that particular object; if no such data is included, the default scheduler is selected instead. <br><br>
+                                    A scheduler is extremely important and complex in a multi-node Kubernetes cluster, while in a single-node Kubernetes cluster possibly used for learning and development purposes, the scheduler's job is quite simple.
+                                </p>
+                                <h5>Controller managers</h5>
+                                <p>
+                                    The controller managers are components of the control plane node running controllers or operator processes to regulate the state of the Kubernetes cluster. Controllers are watch-loop processes continuously running and comparing the cluster's desired state (provided by objects' configuration data) with its current state (obtained from the key-value store via the API Server). In case of a mismatch corrective action is taken in the cluster until its current state matches the desired state.
+                                    The kube-controller-manager runs controllers or operators responsible to act when nodes become unavailable, to ensure container pod counts are as expected, to create endpoints, service accounts, and API access tokens.
+                                    The cloud-controller-manager runs controllers or operators responsible to interact with the underlying infrastructure of a cloud provider when nodes become unavailable, to manage storage volumes when provided by a cloud service, and to manage load balancing and routing.
+                                </p>
+                                <h5>Key-value data store</h5>
+                                <p>
+                                    etcd is an open source project under the Cloud Native Computing Foundation (CNCF). etcd is a strongly consistent, distributed key-value data store used to persist a Kubernetes cluster's state. New data is written to the data store only by appending to it, data is never replaced in the data store. Obsolete data is compacted (or shredded) periodically to minimize the size of the data store. <br>
+                                    Out of all the control plane components, only the API Server is able to communicate with the etcd data store. <br><br>
+                                    etcd's CLI management tool - etcdctl, provides snapshot save and restore capabilities which come in handy especially for a single etcd instance Kubernetes cluster - common in Development and learning environments. However, in Stage and Production environments, it is extremely important to replicate the data stores in HA mode, for cluster configuration data resiliency. <br>
+                                    Some Kubernetes cluster bootstrapping tools, such as kubeadm, by default, provision stacked etcd control plane nodes, where the data store runs alongside and shares resources with the other control plane components on the same control plane node. <br>
+                                    <img src="img/stackedEtcdTopology.PNG" class="responsive" alt=""> <br>
+                                    For data store isolation from the control plane components, the bootstrapping process can be configured for an external etcd topology, where the data store is provisioned on a dedicated separate host, thus reducing the chances of an etcd failure. <br>
+                                    <img src="img/externaletcdTopology.PNG" class="responsive" alt=""> <br>
+                                    Both stacked and external etcd topologies support HA configurations. etcd is based on the Raft Consensus Algorithm which allows a collection of machines to work as a coherent group that can survive the failures of some of its members. At any given time, one of the nodes in the group will be the leader, and the rest of them will be the followers. etcd gracefully handles leader elections and can tolerate node failure, including leader node failures. Any node can be treated as a leader. <br>
+                                    etcd is written in the Go programming language. In Kubernetes, besides storing the cluster state, etcd is also used to store configuration details such as subnets, ConfigMaps, Secrets, etc.
+                                </p>
+                                <h5>Worker Node Overview</h5>
+                                <p>
+                                    A worker node provides a running environment for client applications. Though containerized microservices, these applications are encapsulated in Pods, controlled by the cluster control plane agents running on the control plane node. Pods are scheduled on worker nodes, where they find required compute, memory and storage resources to run, and networking to talk to each other and the outside world. A Pod is the smallest scheduling work unit in Kubernetes. 
+                                    It is a logical collection of one or more containers scheduled together, and the collection can be started, stopped, or rescheduled as a single unit of work. <br>
+                                    Also, in a multi-worker Kubernetes cluster, the network traffic between client users and the containerized applications deployed in Pods is handled directly by the worker nodes, and is not routed through the control plane node.
+                                </p>
+                                <h4>Worker Node Components</h5>
+                                <p>
+                                    The following components: 
+                                    <ul>
+                                        <li>
+                                            Container Runtime
+                                        </li>
+                                        <li>
+                                            Node Agent- Kubelet
+                                        </li>
+                                        <li>
+                                            Proxy - Kube-proxy
+                                        </li>
+                                        <li>
+                                            Addons for DNS. Dashboard user interface, cluster-level monitoring and logging
+                                        </li>
+                                    </ul>
+                                </p>
+                                <h5>Container Runtime</h5>
+                                <p>
+                                    Although Kubernetes is described as a "container orchestration engine", it lacks the capability to directly handle and run containers. In order to manage a container's lifecycle, Kubernetes requires a container runtime on the node where a Pod and its containers are to be scheduled. Runtimes are required on all nodes of a Kubernetes cluster, both control plane and worker. Kubernetes supports several container runtimes:
+                                    <ul>
+                                        <li>
+                                            <a href="https://cri-o.io/" target="_blank" rel="noopener noreferrer">CRI-O.</a>
+                                        </li>
+                                        <li>                                            
+                                            <a href="https://containerd.io/" target="_blank" rel="noopener noreferrer">Containerd.</a>
+                                        </li>
+                                        <li>
+                                            Docker.
+                                        </li>
+                                        <li>                                            
+                                            <a href="https://www.mirantis.com/software/container-runtime/" target="_blank" rel="noopener noreferrer">Mirantis Container Runtime.</a>
+                                        </li>
+                                    </ul>
+                                </p>
+                                <h5>Node Agent - Kubelet</h5>
+                                <p>
+                                    The kubelet is an agent running on each node, control plane and workers, and communicates with the control plane. It receives Pod definitions, primarily from the API Server, and interacts with the container runtime on the node to run containers associated with the Pod. It also monitors the health and resources of Pods running containers.
+                                    The kubelet connects to container runtimes through a plugin based interface - the Container Runtime Interface (CRI). The CRI consists of protocol buffers, gRPC API, libraries, and additional specifications and tools that are currently under development. In order to connect to interchangeable container runtimes, kubelet uses a shim application which provides a clear abstraction layer between kubelet and the container runtime. <br>
+                                    <div>
+                                        <img src="img/ContainerRuntimeInterface.PNG" class="responsive" alt="" srcset="">
+                                    </div>
+                                    As shown above, the kubelet acting as grpc client connects to the CRI shim acting as grpc server to perform container and image operations. The CRI implements two services: ImageService and RuntimeService. The ImageService is responsible for all the image-related operations, while the RuntimeService is responsible for all the Pod and container-related operations. <br>
+                                    Container runtimes used to be hard-coded into kubelet, but since the CRI was introduced, Kubernetes has become more flexible to use different container runtimes without the need to recompile. Any container runtime that implements the CRI can be used by Kubernetes to manage Pods, containers, and container images.
+                                </p>
+                                <h5>Proxy - Kube-proxy</h5>
+                                <p>
+                                    The kube-proxy is the network agent which runs on each node, control plane and workers, responsible for dynamic updates and maintenance of all networking rules on the node. It abstracts the details of Pods networking and forwards connection requests to the containers in the Pods. <br>
+                                    The kube-proxy is responsible for TCP, UDP, and SCTP stream forwarding or random forwarding across a set of Pod backends of an application, and it implements forwarding rules defined by users through Service API objects.
+                                </p>
+                                <h5>Addons</h5>
+                                <p>
+                                    Addons are cluster features and functionality not yet available in Kubernetes, therefore implemented through 3rd-party pods and services.
+                                    <ul>
+                                        <li>
+                                            <b>DNS</b> - Cluster DNS is a DNS server required to assign DNS records to Kubernetes objects and resources.
+                                        </li>
+                                        <li>
+                                            <b>Dashboard</b> -  A general purposed web-based user interface for cluster management.
+                                        </li>
+                                        <li>
+                                            <b>Monitoring</b> -  Collects cluster-level container metrics and saves them to a central data store.
+                                        </li>
+                                        <li>
+                                            <b>Logging</b> - Collects cluster-level container logs and saves them to a central log store for analysis.
+                                        </li>
+                                    </ul>
+                                </p>                                
+                            </p>
+                            <h3>Networking Challenges</h3>
+                            <p>
+                                Decoupled microservices based applications rely heavily on networking in order to mimic the tight-coupling once available in the monolithic era. Networking, in general, is not the easiest to understand and implement. Kubernetes is no exception - as a containerized microservices orchestrator it needs to address a few distinct networking challenges:
+                                <ul>
+                                    <li>
+                                        Container-to-container communication inside Pods
+                                    </li>
+                                    <li>
+                                        Pod-to-Pod communication on the same node and accross cluster nodes.
+                                    </li>
+                                    <li>
+                                        Pod-to-Sevice communication within the same namespace and across cluster namespaces
+                                    </li>
+                                    <li>
+                                        External-to-Service communication for clients to access applications in a cluster.
+                                    </li>
+                                </ul>
+                                All these networking challenges must be addressed before deploying a Kubernetes cluster.
+                            </p>
+                            <h4>Container-to-Container</h4>
+                            <p>
+                                Making use of the underlying host operating system's kernel virtualization features, a container runtime creates an isolated network space for each container it starts. On Linux, this isolated network space is referred to as a network namespace. A network namespace can be shared across containers, or with the host operating system. <br>
+                                When a grouping of containers defined by a Pod is started, a special Pause container is initialized by the Container Runtime for the sole purpose to create a network namespace for the Pod. All additional containers, created through user requests, running inside the Pod will share the Pause container's network namespace so that they can all talk to each other via localhost.
+                            </p>
+                            <h4>Pod-to-Pod communication Across Nodes</h4>
+                            <p>
+                                n a Kubernetes cluster Pods, groups of containers, are scheduled on nodes in a nearly unpredictable fashion. Regardless of their host node, Pods are expected to be able to communicate with all other Pods in the cluster, all this without the implementation of Network Address Translation (NAT). This is a fundamental requirement of any networking implementation in Kubernetes. <br>
+                                The Kubernetes network model aims to reduce complexity, and it treats Pods as VMs on a network, where each VM is equipped with a network interface - thus each Pod receiving a unique IP address. This model is called "IP-per-Pod" and ensures Pod-to-Pod communication, just as VMs are able to communicate with each other on the same network. <br>
+                                Let's not forget about containers though. They share the Pod's network namespace and must coordinate ports assignment inside the Pod just as applications would on a VM, all while being able to communicate with each other on localhost - inside the Pod. However, containers are integrated with the overall Kubernetes networking model through the use of the Container Network Interface (CNI) supported by CNI plugins. 
+                                CNI is a set of a specification and libraries which allow plugins to configure the networking for containers. While there are a few core plugins, most CNI plugins are 3rd-party Software Defined Networking (SDN) solutions implementing the Kubernetes networking model. In addition to addressing the fundamental requirement of the networking model, some networking solutions offer support for Network Policies. 
+                                Flannel, Weave, Calico are only a few of the SDN solutions available for Kubernetes clusters. 
+                                <div>
+                                    <img src="img/ContainerNetworkInterface-Core-Plugins.PNG" class="responsive" alt="">
+                                </div>
+                                The container runtime offloads the IP assignment to CNI, which connects to the underlying configured plugin, such as Bridge or MACvlan, to get the IP address. Once the IP address is given by the respective plugin, CNI forwards it back to the requested container runtime. <br>
+                                For more details, you can explore the Kubernetes documentation.
+                            </p>
+                            <h4>Pod-to-External World Communication</h4>
+                            <p>
+                                A successfully deployed containerized application running in Pods inside a Kubernetes cluster may require accessibility from the outside world. Kubernetes enables external accessibility through Services, complex encapsulations of network routing rule definitions stored in iptables on cluster nodes and implemented by kube-proxy agents. 
+                                By exposing services to the external world with the aid of kube-proxy, applications become accessible from outside the cluster over a virtual IP address and a dedicated port number.
+                            </p>
+                            <hr>
+                            <h2>Kubernetes for you</h2>
+                            <p>
+                                Most of the tutorials runs on Play with K8s Platform. This is a free browser based learning platform for you. Kubernetes tools like kubeadm, kompose & kubectl are already installed for you. All you need is to get started. <br> 
+                                But before ... learn this topics 
+                                <h3>Secret</h3>
+                                <p>
+                                    A secret is an object, where we can store sensitive informations like usernames and passwords. In the secret files, calues are base64 encoded. <br>
+                                    To use a secret, we need to refer to the secret in our Pod or we can put it inside a volume and mount that to the container. Secret aren't encrypted by default. For encryption we beed to create an EncryptionConfig. 
+                                </p>
+                                <h3>Service.</h3>
+                                <p>
+                                    A service is responsible for making our Pods discoverable inside the network or exponsing them to the Internet, a service identifies Pods by its LabelSelector. There are 3 types of services:
+                                    <h4>ClusterIP</h4>
+                                    <p>
+                                        <ul>
+                                            <li>The deployment is only visible inside the cluster.</li>
+                                            <li>The deployment gets an internal ClusterIP assigned to it.</li>
+                                            <li>Traffic is load balanced between the Pods od the deployment.</li>
+                                        </ul>
+                                    </p>
+                                    <h4>Node Port</h4>
+                                    <p>
+                                        <ul>
+                                            <li>The deployment is visible inside the cluster</li>
+                                            <li>The deployment is bound tp a port of the Master Node.</li>
+                                            <li>Each Node will proxy that port to your Service</li>
+                                            <li>The service is available at http(s)://</li>
+                                            <li>Traffic is load balanced between the Pods of the deployment</li>
+                                        </ul>
+                                    </p>
+                                    <h4>Load Balancer</h4>
+                                    <p>
+                                        <ul>
+                                            <li>The deployment gets a Public IP address assigned</li>
+                                            <li>The service is available at https(s):<80||42></li>
+                                            <li>Traffic is load balanced between the Pods of the deployment</li>
+                                        </ul>
+                                    </p>
+                                </p>
+                            </p>
+                            <hr>
+                            <h2>Understanding Kubernetes Developer Concepts</h2>
+                            <p>
+                                Kubernetes has a number of abstractions that map to API objects. These Kubernetes API Object can be used to describe your cluster's desired state which will include info such as applications and workloads running, replicas, container images, networking resources and more. 
+                                This section explain the key concepts relevant from an application developer perspective.
+                            </p>
+                            <h3>POD</h3>
+                            <p>
+                                A Pod is the smallest deployable unit that can be created, scheduled and managed. It's logical collection of containers that belong to an application. Pods are created in a namespace. All containers in a pod share the namespace, volumes and networking stack. This allows containers in the pod to 'find' each other and communicate using <strong><code>localhost</code></strong>.                                
+                                <h4>Create a Pod</h4>
+                                <p>
+                                    Each resource in Kubernetes can be defined using a configuration file. For example, an NGINX pod can be defined with configuration file shown in below:
+                                    <blockquote>
+                                        <code>
+<pre>
+apiVersion: v1
+kind: Pod
+metadata:
+    name: nginx-pod 
+    labels:
+        name: nginx-pod 
+    spec:
+        containers:
+        - name: nginx
+          image: nginx:latest 
+          ports:
+          - containerPort: 80
+</pre>                                            
+                                        </code>
+                                    </blockquote>
+                                    Create the pod as shown below:
+                                    <blockquote>
+                                        <code>
+                                            $ kubectl create -f template/pod.yaml <br>
+                                            <i>pod "nginx-pod" created</i>                                            
+                                        </code>
+                                    </blockquote>
+                                    Get the list of pod:
+                                    <blockquote>
+                                        <code>
+<pre>
+$ kubectl get pods
+NAME        READY   STATUS   RESTARTS    AGE
+nginx-pod   1/1     Running  0            30s
+</pre>                                            
+                                        </code>
+                                    </blockquote>
+                                    Verify that the pod came up fine:
+                                    <blockquote>
+                                        <code>
+                                            kubectl -n default port-forward $(kubectl -n default get pod -l name-nginx-pod -o jsonpath='{.items[0].metadata.name}') 8080:80 & open http:/localhost:8080/
+                                        </code>
+                                    </blockquote>
+                                    This open up a browser window and show the nginx main page. 
+                                    <div>
+                                        <img src="" class="responsive" alt="Nginx main page using a POD with Kubernetes">
+                                    </div>
+                                    If the containers in the pod generate logs, the they can be using  the command shown:
+                                    <blockquote>
+                                        <code>
+                                            <pre>
+$ kubectl logs nginx-pod                                                 
+                                            </pre>
+                                        </code>
+                                    </blockquote>                                    
+                                </p>
+                                <h4>Delete a Pod</h4>
+                                <p>
+                                    Delete the pod as shown below:
+                                    <blockquote>
+                                        <code>
+                                            $ kubectl delete -f template/pod.yaml
+                                        </code>
+                                    </blockquote>                                                                        
+                                </p>
+                                <h4>Deployment</h4>
+                                <p>
+                                    A "desired state", such as 4 replicas of a pod, can be described in a Deployment object. The Deployment controller in Kubernetes cluster then ensures the desired and the actual state are matching. Deployment ensures the recreation of a pod when the worker node fails or reboots. 
+                                    If a pod dies, then a new pod us started to ensure the desired vs actual matches. It also allows both up-and down-scaling the number of replicas. This is achieved using ReplicaSet. The Deployment manages the ReplicaSet and provides updates to those pods. 
+                                    <h5>Create a Deployment</h5>
+                                    <p>
+                                        The following example will create a Deployment with 3 replicas of Nginx base image. Let's begin with the template:
+                                        <blockquote>
+                                            <code>
+<pre>
+apiVersion: extensions/v1beta1
+kind: Deployment # kubernetes object type
+metadata: 
+    name: nginx-deployment # deployment name 
+spec: 
+    replicas: 3 # number of replicas 
+    template:
+        metadata:
+            labels:
+                app: nginx # pod labels
+        spec: 
+            containers:
+            - name: nginx # container name
+              image: nginx:1.12.1 # nginx image 
+              imagePullPolicy: IfNotPresent # if exists, will not pull new image 
+              ports: # container and host port assignments
+              - containerPort: 80
+              - containerPort: 443
+</pre>                                                
+                                            </code>
+                                        </blockquote>
+                                        This deployment will create 3 instances of Nginx image. Run the following command to create Deployment:
+                                        <blockquote>
+                                            <code>
+<pre>
+$ kubectl create -f template/deployment.yaml --record
+deployment "nginx-deployment" created 
+</pre>                                                
+                                            </code>
+                                        </blockquote>
+                                        The <code>--record</code> flag will track changes made through each revision. To monitor deployment  rollout status: 
+                                        <blockquote>
+                                            <code>
+<pre>
+$ kubectl rollout  status deployment/nginx-deployment 
+deployment "nginx-deployment" successfully rolled out
+</pre>                                                
+                                            </code>
+                                        </blockquote>
+                                        A Deployment creates a ReplicaSet to manage the number of replicas. Let's take a look at existing deplyments and replica set. Get the deployments: 
+                                        <blockquote>
+                                            <code>
+<pre>
+$ kubectl get deployments 
+NAME            DESIRED     CURRENT     UP-TO-DATE      AVAILABLE       AGE
+nginx-deployment  3         3           3               3               20s
+</pre>                                                
+                                            </code>
+                                        </blockquote>
+                                    </p>
+                                </p> 
+                            </p>
+                            <hr>                            
+                            <h2>Web Labs</h2>                            
+                            <p>
+                                <a href="https://labs.play-with-k8s.com/" target="_blank" rel="noopener noreferrer">Lab page</a>
+                            </p>
+                        </div>
+                    </p>
+                </div>
+                <hr>
+                <!-- Section Content-->
+                <div class="row">
+                    <p>
+
+                    </p>
+                </div>                
+            </div>
+        </section>
+        <!-- Contact Section-->
+        <section class="page-section" id="contact">
+            <div class="container">
+                <!-- Contact Section Heading-->
+                <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Contact Me</h2>
+                <!-- Icon Divider-->
+                <div class="divider-custom">
+                    <div class="divider-custom-line"></div>
+                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                    <div class="divider-custom-line"></div>
+                </div>
+            </div>
+        </section>
+        <!-- Footer-->
+        <footer class="footer text-center">
+            <div class="container">
+                <div class="row">
+                    <!-- Footer Location-->
+                    <div class="col-lg-4 mb-5 mb-lg-0">
+                        <h4 class="text-uppercase mb-4">Location</h4>
+                        <p class="lead mb-0">
+                            28801
+                            <br />
+                            Madrid, Spain
+                        </p>
+                    </div>
+                    <!-- Footer Social Icons-->
+                    <div class="col-lg-4 mb-5 mb-lg-0">
+                        <h4 class="text-uppercase mb-4">Around the Web</h4>
+                        <!-- 
+                        <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-facebook-f"></i></a>
+                        <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-twitter"></i></a>
+                        -->
+                        <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-linkedin-in"></i></a>
+                        <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-github"></i></a>
+                    </div>
+                    <!-- Footer About Text-->
+                    <div class="col-lg-4">
+                        <h4 class="text-uppercase mb-4">About me</h4>
+                        <p class="lead mb-0">
+                            Aprendiendo de Sistemas.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+         <!-- Copyright Section-->
+         <div class="copyright py-4 text-center text-white">
+            <div class="container"><small>
+                <p style="text-align: center"> Copyright &copy; 2018-<script>document.write(new Date().getFullYear())</script> Pauchino09. </p>
+            </small></div>
+        </div>
+        <!-- Portfolio Modals-->
+        <!-- Portfolio Modal 1-->
+        <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" aria-labelledby="portfolioModal1" aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                    <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button></div>
+                    <div class="modal-body text-center pb-5">
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-8">
+                                    <!-- Portfolio Modal - Title-->
+                                    <!----------------------------------------------------------- KUBERNETES -------------------------------------------------------------------->
+                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Docker & Kubernetes</h2>
+                                    <!-- Icon Divider-->
+                                    <div class="divider-custom">
+                                        <div class="divider-custom-line"></div>
+                                        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                                        <div class="divider-custom-line"></div>
+                                    </div>
+                                    <!-- Portfolio Modal - Image-->
+                                    <!-- <img class="img-fluid rounded mb-5" src="assets/img/portfolio/container.png" alt="..." /> -->
+                                    <!-- Portfolio Modal - Text-->
+                                    <!----------------------------------------------------------- Content -------------------------------------------------------------------->
+                                    <p class="mb-4">
+                                        <a href="deploy/kubernetes.html" rel="noopener noreferrer">Kubernetes</a>
+                                    </p>
+                                    <button class="btn btn-primary" data-bs-dismiss="modal">
+                                        <i class="fas fa-xmark fa-fw"></i>
+                                        Close Window
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Portfolio Modal 2-->
+        <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" aria-labelledby="portfolioModal2" aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                    <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button></div>
+                    <div class="modal-body text-center pb-5">
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-8">
+                                    <!-- Portfolio Modal - Title-->
+                                    <!----------------------------------------------------------- JENKINS -------------------------------------------------------------------->
+                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Jenkins</h2>
+                                    <!-- Icon Divider-->
+                                    <div class="divider-custom">
+                                        <div class="divider-custom-line"></div>
+                                        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                                        <div class="divider-custom-line"></div>
+                                    </div>
+                                    <!-- Portfolio Modal - Image-->
+                                    <img class="img-fluid rounded mb-5" src="assets/img/portfolio/Jenkins.png" alt="..." />
+                                    <!-- Portfolio Modal - Text-->
+                                    <!----------------------------------------------------------- Content -------------------------------------------------------------------->
+                                    <p class="mb-4">
+                                        
+                                    </p>
+                                    <button class="btn btn-primary" data-bs-dismiss="modal">
+                                        <i class="fas fa-xmark fa-fw"></i>
+                                        Close Window
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Portfolio Modal 3-->
+        <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" aria-labelledby="portfolioModal3" aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                    <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button></div>
+                    <div class="modal-body text-center pb-5">
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-8">
+                                    <!-- Portfolio Modal - Title-->
+                                    <!----------------------------------------------------------- GITLAB -------------------------------------------------------------------->
+                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Gitlab</h2>
+                                    <!-- Icon Divider-->
+                                    <div class="divider-custom">
+                                        <div class="divider-custom-line"></div>
+                                        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                                        <div class="divider-custom-line"></div>
+                                    </div>
+                                    <!-- Portfolio Modal - Image-->
+                                    <img class="img-fluid rounded mb-5" src="assets/img/portfolio/Git.png" alt="..." />
+                                    <!-- Portfolio Modal - Text-->
+                                    <!----------------------------------------------------------- Content -------------------------------------------------------------------->
+                                    <p class="mb-4">
+                                        
+                                    </p>
+                                    <button class="btn btn-primary" data-bs-dismiss="modal">
+                                        <i class="fas fa-xmark fa-fw"></i>
+                                        Close Window
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Portfolio Modal 4-->
+        <div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" aria-labelledby="portfolioModal4" aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                    <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button></div>
+                    <div class="modal-body text-center pb-5">
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-8">
+                                    <!-- Portfolio Modal - Title-->
+                                    <!----------------------------------------------------------- JIRA OR ICINGA -------------------------------------------------------------------->
+                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Jira (or Icinga).</h2>
+                                    <!-- Icon Divider-->
+                                    <div class="divider-custom">
+                                        <div class="divider-custom-line"></div>
+                                        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                                        <div class="divider-custom-line"></div>
+                                    </div>
+                                    <!-- Portfolio Modal - Image-->
+                                    <img class="img-fluid rounded mb-5" src="assets/img/portfolio/Jira.jpg" alt="..." />
+                                    <!-- Portfolio Modal - Text-->
+                                    <!----------------------------------------------------------- Content -------------------------------------------------------------------->
+                                    <p class="mb-4">
+                                        
+                                    </p>
+                                    <button class="btn btn-primary" data-bs-dismiss="modal">
+                                        <i class="fas fa-xmark fa-fw"></i>
+                                        Close Window
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Portfolio Modal 5-->
+        <div class="portfolio-modal modal fade" id="portfolioModal5" tabindex="-1" aria-labelledby="portfolioModal5" aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                    <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button></div>
+                    <div class="modal-body text-center pb-5">
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-8">
+                                    <!-- Portfolio Modal - Title-->
+                                    <!----------------------------------------------------------- TERRAFORM -------------------------------------------------------------------->
+                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Terraform.</h2>
+                                    <!-- Icon Divider-->
+                                    <div class="divider-custom">
+                                        <div class="divider-custom-line"></div>
+                                        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                                        <div class="divider-custom-line"></div>
+                                    </div>
+                                    <!-- Portfolio Modal - Image-->
+                                    <img class="img-fluid rounded mb-5" src="assets/img/portfolio/Terra.png" alt="..." />
+                                    <!-- Portfolio Modal - Text-->
+                                    <!----------------------------------------------------------- Content -------------------------------------------------------------------->
+                                    <p class="mb-4">
+                                        
+                                    </p>
+                                    <button class="btn btn-primary" data-bs-dismiss="modal">
+                                        <i class="fas fa-xmark fa-fw"></i>
+                                        Close Window
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Portfolio Modal 6-->
+        <div class="portfolio-modal modal fade" id="portfolioModal6" tabindex="-1" aria-labelledby="portfolioModal6" aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                    <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button></div>
+                    <div class="modal-body text-center pb-5">
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-8">
+                                    <!-- Portfolio Modal - Title-->
+                                    <!----------------------------------------------------------- AWS -------------------------------------------------------------------->
+                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">AWS</h2>
+                                    <!-- Icon Divider-->
+                                    <div class="divider-custom">
+                                        <div class="divider-custom-line"></div>
+                                        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                                        <div class="divider-custom-line"></div>
+                                    </div>
+                                    <!-- Portfolio Modal - Image-->
+                                    <img class="img-fluid rounded mb-5" src="assets/img/portfolio/AWS.png" alt="..." />
+                                    <!-- Portfolio Modal - Text-->
+                                    <!----------------------------------------------------------- Content -------------------------------------------------------------------->
+                                    <p class="mb-4">
+                                        
+                                    </p>
+                                    <button class="btn btn-primary" data-bs-dismiss="modal">
+                                        <i class="fas fa-xmark fa-fw"></i>
+                                        Close Window
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+        <!-- * *                               SB Forms JS                               * *-->
+        <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
+        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+        <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+    </body>
+</html>
