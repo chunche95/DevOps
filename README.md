@@ -1,5 +1,5 @@
 <img src="styles/assets/img/banner-mybanner.png" width="65" alt="Banner"> 
-<br>
+
 <h2>Introducción a Docker y Kubernetes:</h2>
 <p>
 Este repositorio contiene información y ejemplos sobre el uso de Docker y Kubernetes en el desarrollo y despliegue de aplicaciones en contenedores. Docker es una plataforma que permite crear, gestionar y ejecutar contenedores, que son entornos aislados para aplicaciones. Kubernetes, por otro lado, es una herramienta de orquestación de contenedores que facilita la gestión, escalabilidad y resiliencia de las aplicaciones en entornos de producción. Aquí encontrarás tutoriales, ejemplos y mejores prácticas para trabajar con estas tecnologías.
