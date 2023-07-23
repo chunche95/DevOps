@@ -269,6 +269,27 @@ pre code {
   font-size: inherit;
   color: inherit;
   word-break: normal;
+  counter-reset: line-numbering;
+  background: #a4b2c077;
+  padding: 12px 0px 14px 0;
+  width: 1000px;
+  color: #8733d6;
+  line-height: 100%;
+  font-size: small;
+  padding: 0.2rem 0.4rem;
+  overflow-x: auto;
+}
+
+pre .line::before {
+  content: counter(line-numbering);
+  counter-increment: line-numbering;
+  padding-right: 1em;
+  /* space after numbers */
+  padding-left: 8px;
+  width: 1.5em;
+  text-align: right;
+  opacity: 0.5;
+  color: white;
 }
 
 code {
