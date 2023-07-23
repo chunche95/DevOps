@@ -58,19 +58,234 @@
                 <div class="divider-custom">
                     <p class="page-section">
                         <div>
-                            <h1>¿What is Docker?</h1>
+                            <h1>¿What is Docker?</h1>                            
+                            <p>
+                                Docker is a platform that allows you to createm test and deploy applications quickly  and efficiently. It utilizes containerization technology to package an application and all its dependencies into a standardized unit called a container. 
+                                These containers are isolated and lightweigth, ensuring consistency across various environments, making it easier to deploy and run application seamlessly on different systems. <br>
+                                Docker is a game-changer in the world of software development and deployment. By utilizing multiple threads of processing, it can effectively manage and destribute containers accross different systems, optimizing resource utilization and enhancing overall performance. Moreover, Docker's support
+                                for orchestration tools like Kubernetes enables seamless scaling and management of containers in large-scale production environments. This distributed approach ensures high availability and fault tolerance, making it an ideal choice for modern, containerized applications.
+                            </p>
+                            <hr>
+                            <h1>Contents</h1>
+                            <p>
+                                <strong><i>Getting Started with Docker</i></strong>
+                                <p>
+                                    <ul>
+                                        <li>
+                                            Installing Docker on various operating systems                                
+                                        </li>
+                                        <li>
+                                            Basic Docker CLI commands and usage                                
+                                        </li>
+                                    </ul>
+                                </p>
+                                <strong><i>Building Docker Images</i></strong>
+                                <p>
+                                    <ul>
+                                        <li>
+                                            Creating Docker images from Dockerfiles                                
+                                        </li>
+                                        <li>
+                                            Best practices for building efficient and secure images                                
+                                        </li>
+                                    </ul>
+                                </p>
+                                <strong><i>Docker Networking</i></strong>
+                                <p>
+                                    <ul>
+                                        <li>
+                                            Configuring networking for containers                                
+                                        </li>
+                                        <li>
+                                            Creating multi-container applications with Docker Compose                                
+                                        </li>
+                                    </ul>
+                                </p>
+                                <strong><i>Data Management with Docker Volumes</i></strong>
+                                <p>
+                                    <ul>
+                                        <li>
+                                            Persistent data storage in Docker containers                                
+                                        </li>
+                                        <li>
+                                            Managing data volumes and backups                                
+                                        </li>
+                                    </ul>
+                                </p>
+                                <strong><i>Docker Hub and Container Registries</i></strong>
+                                <p>
+                                    <ul>
+                                        <li>
+                                            Leveraging Docker Hub for pre-built images                                
+                                        </li>
+                                        <li>
+                                            Setting up private container registries                                
+                                        </li>
+                                    </ul>
+                                </p>
+                                <strong><i>Docker Compose and Orchestration</i></strong>
+                                <p>
+                                    <ul>
+                                        <li>
+                                            Simplifying multi-container application deployment                                
+                                        </li>
+                                        <li>
+                                            Introduction to Docker Swarm for container orchestration                                
+                                        </li>
+                                    </ul>
+                                </p>
+                                <strong><i>Docker Security Best Practices</i></strong>
+                                <p>
+                                    <ul>
+                                        <li>
+                                            Securing Docker containers and images                                
+                                        </li>
+                                        <li>
+                                            Implementing user authentication and role-based access                                
+                                        </li>
+                                    </ul>
+                                </p>                                
+                                <strong><i>Continuous Integration and Deployment with Docker</i></strong>
+                                <p>
+                                    <ul>
+                                        <li>
+                                            Integrating Docker into CI/CD pipelines                                
+                                        </li>
+                                        <li>
+                                            Automating application deployment using Docker
+                                        </li>
+                                    </ul>
+                                </p>
+
+                            </p>
+                                
+                            <h2>How Docker works</h2>
+                            <p>
+                                Docker works by providing a standard way to run your code. Docker is an operating system for containers. Similar to how a virtual machine vitualizes (removes the need to directly manage) server hardware, containers virtualize the operating system of a server. Docker is installed on each server and provides 
+                                simple commands you can use to build, start or stop containers.
+                                <img src="img/how-work.png" class="responsive" alt="">
+                            </p>
+                            <h2>Why use Docker</h2>
+                            <p>
+                                Using Docker lets you ship code faster, standardize application operations, seamlesslu move code and save money by improving resource utilization. With Docker, you get a single object that can reliably run anywhere. Docker's simple and straightforward syntax gives you full control. Wide adoption means there's a robust 
+                                ecosystem of tools and off-the-shelf applications that are ready  to use with Docker.
+                            </p>
+                            <h2>When to use Docker</h2>
+                            <p>
+                                You can use Docker containers as a core building block creating modern applications and platforms. Docker makes it easy to build and run distributed microservices architectures, deploy your coude with standardized continuous integration and delivery pipelines, build highly-scalable data processing systems, and create fully-managed 
+                                platforms for your developers. <br>
+                                <div>
+                                    <h5>MICROSERVICES</h5>
+                                    <p>Build and scale distributed application architectures by taking advantage of standardized code deployments using Docker containers.</p>
+                                </div>
+                                <div>
+                                    <h5>CONTINUOUS INTEGRATION & DELIVERY</h5>
+                                    <p>Accelerate application delivery by standardizing environments and removing conflicts between language stacks and versions.</p>
+                                </div>
+                                <div>
+                                    <h5>DATA PROCESSING</h5>
+                                    <p>Provide big data processing as a service. Package data and analytics packages into portable containers that can be executed by non-technical users.</p>
+                                </div>
+                                <div>
+                                    <h5>CONTAINERS AS A SERVICE</h5>
+                                    <p>Build and ship distributed applications with content and infrastructure that is IT-managed and secured.</p>
+                                </div>
+                            </p>
+                            <hr>
+                            <h1>Install Docker Engine on SO</h1>
+                            <p>                                
+                                <h2>Installing Docker on Various Operating Systems:</h2>
+                                <p>
+                                    Docker provides straightforward installation procedures for different operating systems, making it accessible to developers across various platforms. Here's a brief overview of the installation steps for popular operating systems: <br>
+                                    <div>
+                                        1. <strong>Installing Docker on Linux:</strong> <br>
+                                        - Docker is well-supported on most Linux distributions. You can typically install Docker using the package manager specific to your distribution. For example, on Ubuntu, you can use `apt` package manager, while on CentOS, you can use `yum` package manager. <br>
+                                        Go <a href="https://docs.docker.com/engine/install/ubuntu/" target="_blank" rel="noopener noreferrer">Docker Docs</a>.
+                                        2. <strong>Installing Docker on macOS:</strong> <br>
+                                        - On macOS, you can install Docker Desktop, a user-friendly application that includes the Docker Engine, CLI, and a graphical interface. Simply download the Docker Desktop installer from the Docker website and follow the installation wizard. <br>
+                                        3. <strong>Installing Docker on Windows:</strong> <br>
+                                        - For Windows users, Docker Desktop is also available. Docker Desktop provides a seamless experience for running Docker on Windows. Download the installer from the Docker website and run the setup. <br>
+                                        <i>
+                                            For Windows 10 Pro, Enterprise, or Education editions, you can use "Docker Desktop," which includes everything you need to run Docker containers. Download the installer from the Docker website and follow the on-screen instructions. <br>
+                                            For Windows 10 Home or older versions, you can use "Docker Toolbox," an older version of Docker Desktop. Download the installer and follow the installation guide.
+                                        </i>
+                                    </div>
+                                    After installing Docker, you'll have access to both the Docker Engine, responsible for managing containers, and the Docker CLI, which allows you to interact with Docker through the command line.
+                                    <a href="https://docs.docker.com/engine/install/" target="_blank" rel="noopener noreferrer">Docs Overview - Install Docker Engine</a>
+
+                                </p>
+                                <h2>Basic Docker CLI Commands and Usage:</h2>
+
+                                Once Docker is installed, you can begin working with containers using the Docker CLI. Here are some fundamental commands to get you started:
+                                <ul>
+                                    <ol>
+                                        1. <strong>`docker --version`:</strong> Check the installed Docker version.
+                                    </ol>
+                                    <ol>
+                                        2. <strong>`docker info`:</strong> Display system-wide information about Docker.
+                                    </ol>
+                                    <ol>
+                                        3. <strong>`docker pull <image-name>:<tag>`:</strong> Download a Docker image from Docker Hub or another container registry.
+                                    </ol>
+                                    <ol>
+                                        4. <strong>`docker images`:</strong> List all the Docker images available on your system.
+                                    </ol>
+                                    <ol>
+                                        5. <strong>`docker run <image-name>`:</strong> Run a container from a Docker image.
+                                    </ol>
+                                    <ol>
+                                        6. <strong>`docker ps`:</strong> List all running containers.
+                                    </ol>
+                                    <ol>
+                                        7. <strong>`docker ps -a`:</strong> List all containers, including those that are stopped.
+                                    </ol>
+                                    <ol>
+                                        8. <strong>`docker stop <container-id>`:</strong> Stop a running container.
+                                    </ol>
+                                    <ol>
+                                        9. <strong>`docker start <container-id>`:</strong> Start a stopped container.
+                                    </ol>
+                                    <ol>
+                                        10. <strong>`docker restart <container-id>`:</strong> Restart a running container.
+                                    </ol>
+                                    <ol>
+                                        11. <strong>`docker rm <container-id>`:</strong> Remove a stopped container.
+                                    </ol>
+                                    <ol>
+                                        12. <strong>`docker rmi <image-name>:<tag>`:</strong> Remove a Docker image from your system.
+                                    </ol>
+                                </ul>
+                                These commands provide a glimpse of Docker's capabilities. As you explore Docker further, you'll learn about additional commands and features, such as creating custom Docker images using Dockerfiles, managing container networks, working with volumes for data persistence, and orchestrating multiple containers using Docker Compose or Kubernetes.
+                                Now that you have Docker up and running and know some essential commands, you're ready to dive deeper into the world of containerization. Happy containerizing! If you have any specific questions or need further assistance, feel free to ask.
+                            </p>
+                            <hr>
+                            <h1>Understanding containerization and its advantages</h1>
+                            <p>
+                                Containerization is a revolutionary approach to application deployment and management, providing a lightweight and consistent environment for software to run in. Unlike traditional virtualization, where entire virtual machines are used to host applications, 
+                                containerization enables us to package an application and all its dependencies into a single, self-sufficient unit known as a container. <br>
+                                Containers isolate applications from the underlying infrastructure, ensuring that they run consistently across different environments, be it a developer's laptop, a testing server, or a production system. This portability eliminates the "it works on my 
+                                machine" dilemma and streamlines the development workflow. Moreover, containerization minimizes conflicts between applications and maximizes resource utilization, 
+                                making it an efficient solution for deploying multiple services on a single host.With containerization, applications become easily scalable, as additional containers can be spun up or down as demand fluctuates. This elasticity enables rapid response to 
+                                changing workloads, leading to better resource management and cost-effectiveness. Additionally, containerization facilitates rapid application deployment, reducing the time between writing code and making it available to end-users. This accelerated development 
+                                process gives businesses a competitive edge in today's fast-paced market.
+                            </p>
+                            <h1>Docker's role in modern Software Development.</h1>
+                            <p>
+                                At the forefront of the containerization revolution stands Docker, an open-source platform that has become synonymous with containers. Docker provides a user-friendly and robust ecosystem for creating, managing, and deploying containers effortlessly. <br>
+                                By leveraging Docker, developers gain the ability to encapsulate their applications, along with all required libraries and dependencies, into a single Docker image. These images can then be shared, versioned, and reused, promoting collaboration among teams and simplifying the software distribution process. <br>
+                                Moreover, Docker's architecture fosters a microservices-oriented approach to development, allowing applications to be broken down into smaller, modular components. This microservices architecture enhances maintainability, scalability, and fault isolation, enabling teams to work on different parts of an application independently.
+                                Docker's impact extends beyond just the development phase. Its seamless integration with continuous integration and continuous deployment (CI/CD) pipelines streamlines the testing and release processes, ensuring a smooth and reliable delivery pipeline. <br>
+                                In conclusion, Docker's containerization technology is a game-changer for modern software development. By enabling efficient container management, portability, scalability, and rapid deployment, Docker empowers developers and organizations to embrace agility, 
+                                reliability, and innovation like never before. Whether you are a seasoned developer or just starting your journey, Docker is a must-have tool in your arsenal for building cutting-edge applications and services.
+                            </p>
+
                         </div>
                     </p>
                 </div>
                 <hr>
                 <!-- Section Content-->
                 <div class="row">
-                    <p>
-                        Docker is a platform that allows you to createm test and deploy applications quickly  and efficiently. It utilizes containerization technology to package an application and all its dependencies into a standardized unit called a container. 
-                        These containers are isolated and lightweigth, ensuring consistency across various environments, making it easier to deploy and run application seamlessly on different systems. <br>
-                        Docker is a game-changer in the world of software development and deployment. By utilizing multiple threads of processing, it can effectively manage and destribute containers accross different systems, optimizing resource utilization and enhancing overall performance. Moreover, Docker's support
-                        for orchestration tools like Kubernetes enables seamless scaling and management of containers in large-scale production environments. This distributed approach ensures high availability and fault tolerance, making it an ideal choice for modern, containerized applications.
-                    </p>
+
                 </div>           
             </div>
         </section>
