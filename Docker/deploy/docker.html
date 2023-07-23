@@ -200,9 +200,13 @@
                                     <div>
                                         1. <strong>Installing Docker on Linux:</strong> <br>
                                         - Docker is well-supported on most Linux distributions. You can typically install Docker using the package manager specific to your distribution. For example, on Ubuntu, you can use `apt` package manager, while on CentOS, you can use `yum` package manager. <br>
-                                        Go <a href="https://docs.docker.com/engine/install/ubuntu/" target="_blank" rel="noopener noreferrer">Docker Docs</a>.
+                                        Go <a href="https://docs.docker.com/engine/install/ubuntu/" target="_blank" rel="noopener noreferrer">Docker Docs</a>. 
+                                    </div>
+                                    <div>
                                         2. <strong>Installing Docker on macOS:</strong> <br>
                                         - On macOS, you can install Docker Desktop, a user-friendly application that includes the Docker Engine, CLI, and a graphical interface. Simply download the Docker Desktop installer from the Docker website and follow the installation wizard. <br>
+                                    </div>
+                                    <div>
                                         3. <strong>Installing Docker on Windows:</strong> <br>
                                         - For Windows users, Docker Desktop is also available. Docker Desktop provides a seamless experience for running Docker on Windows. Download the installer from the Docker website and run the setup. <br>
                                         <i>
@@ -210,12 +214,39 @@
                                             For Windows 10 Home or older versions, you can use "Docker Toolbox," an older version of Docker Desktop. Download the installer and follow the installation guide.
                                         </i>
                                     </div>
-                                    After installing Docker, you'll have access to both the Docker Engine, responsible for managing containers, and the Docker CLI, which allows you to interact with Docker through the command line.
+                                    After installing Docker, you'll have access to both the Docker Engine, responsible for managing containers, and the Docker CLI, which allows you to interact with Docker through the command line. <br>
                                     <a href="https://docs.docker.com/engine/install/" target="_blank" rel="noopener noreferrer">Docs Overview - Install Docker Engine</a>
                                     <div>
                                         <img src="img/docker-docs.png" class="responsive" alt="" srcset="">
                                     </div>
+                                    <h1>Bash Script Installed Docker On Ubuntu</h1>
+                                    <p>
+<pre>
+<code>
+#!/bin/bash
 
+# Run the following command to uninstall all conflicting packages
+for pkg in docker.io docker-doc docker-compose podman-docker containerd runc; do sudo apt-get remove $pkg; done
+
+# Set up repository
+sudo apt-get update
+sudo apt-get install ca-certificates curl gnupg
+# Add Docker's official GPG key
+sudo install -m 0755 -d /etc/apt/keyrings
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+sudo chmod a+r /etc/apt/keyrings/docker.gpg
+# set up the repository
+echo \
+  "deb [arch="$(dpkg --print-architecture)" signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \
+  "$(. /etc/os-release && echo "$VERSION_CODENAME")" stable" | \
+  sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+
+# Install Docker Engine - Latest
+sudo apt-get update
+sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+</code>    
+</pre>                                        
+                                    </p>
                                 </p>
                                 <h2>Basic Docker CLI Commands and Usage:</h2>
 
