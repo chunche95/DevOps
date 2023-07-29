@@ -331,61 +331,51 @@
                             <hr>
                             <h1>Building Docker Images</h1>
                             <p>
-                                MultiverseGPT: Building Docker images is a crucial aspect of using Docker effectively. Docker images are the building blocks of containers and define the environment and application setup that will be run within containers. Creating Docker images from Dockerfiles is a popular approach, as Dockerfiles provide a declarative way to specify the steps required to build the image. Here's a comprehensive guide to building Docker images and best practices for creating efficient and secure images:
-
+                                MultiverseGPT: Building Docker images is a crucial aspect of using Docker effectively. Docker images are the building blocks of containers and define the environment and application setup that will be run within containers. Creating Docker images from Dockerfiles is a popular approach, 
+                                as Dockerfiles provide a declarative way to specify the steps required to build the image. Here's a comprehensive guide to building Docker images and best practices for creating efficient and secure images:
                                 <h2>Building Docker Images:</h2>
 
-                                1. <strong>Create a Dockerfile:</strong> Start by creating a Dockerfile in your project directory. The Dockerfile contains a set of instructions for building the image.
-
-                                2. <strong>Choose a Base Image:</strong> Select an appropriate base image that suits your application's requirements. Official images from Docker Hub are recommended, as they are regularly maintained and generally more secure.
-
-                                3. <strong>Use Minimal Base Images:</strong> Opt for minimal base images like Alpine Linux when possible. These images are smaller, reducing the attack surface and improving image build times.
-
-                                4. <strong>Copy Application Files:</strong> Copy only necessary application files into the image. Use the `.dockerignore` file to exclude unnecessary files and directories.
-
-                                5. <strong>Run Commands Wisely:</strong> Order the commands in your Dockerfile wisely to leverage caching. Place frequently changing commands (e.g., copying source code) toward the end to maximize build cache reuse.
-
-                                6. <strong>Minimize Layers:</strong> Reduce the number of layers in the image. Each command in the Dockerfile creates a new layer. Combine related commands with `&&` to reduce the number of layers.
-
-                                7. <strong>Clean Up Unnecessary Files:</strong> Remove unnecessary temporary files and dependencies after installing packages to keep the image size small.
-
+                                1. <strong>Create a Dockerfile:</strong> Start by creating a Dockerfile in your project directory. The Dockerfile contains a set of instructions for building the image. <br>
+                                2. <strong>Choose a Base Image:</strong> Select an appropriate base image that suits your application's requirements. Official images from Docker Hub are recommended, as they are regularly maintained and generally more secure. <br>
+                                3. <strong>Use Minimal Base Images:</strong> Opt for minimal base images like Alpine Linux when possible. These images are smaller, reducing the attack surface and improving image build times. <br>
+                                4. <strong>Copy Application Files:</strong> Copy only necessary application files into the image. Use the `.dockerignore` file to exclude unnecessary files and directories. <br>
+                                5. <strong>Run Commands Wisely:</strong> Order the commands in your Dockerfile wisely to leverage caching. Place frequently changing commands (e.g., copying source code) toward the end to maximize build cache reuse. <br>
+                                6. <strong>Minimize Layers:</strong> Reduce the number of layers in the image. Each command in the Dockerfile creates a new layer. Combine related commands with `&&` to reduce the number of layers. <br>
+                                7. <strong>Clean Up Unnecessary Files:</strong> Remove unnecessary temporary files and dependencies after installing packages to keep the image size small. <br>
                                 8. <strong>Use Specific Tags:</strong> Always use specific tags for your base image, like a version number or commit hash. Avoid using "latest" as it can lead to unpredictability.
                             </p>
                             <h2>Creating Docker Images from Dockerfiles.</h2>
                             <p>                                
-                                1. <strong>Build the Image:</strong> Run the `docker build` command to build the Docker image using the Dockerfile in the current directory.
-                                <code>
-                                docker build -t image_name:tag .
-                                </code>
-
+                                1. <strong>Build the Image:</strong> Run the `<code>docker build</code>` command to build the Docker image using the Dockerfile in the current directory.
+                                <blockquote>
+                                    <code>
+                                        docker build -t image_name:tag .
+                                    </code>
+                                </blockquote>                                
                                 2. <strong>Tagging Images:</strong> After building the image, tag it appropriately for easy identification and version control.
-                                <code>
-                                docker tag source_image:source_tag target_image:target_tag
-                                </code>
-
+                                <blockquote>
+                                    <code>
+                                        docker tag source_image:source_tag target_image:target_tag
+                                    </code>
+                                </blockquote>                        
                                 3. <strong>Push to Registry (Optional):</strong> If you want to share your image with others or use it on multiple machines, push it to a container registry like Docker Hub.
-                                <code>
-                                docker push image_name:tag
-                                </code>                                
+                                <blockquote>
+                                    <code>
+                                        docker push image_name:tag
+                                    </code>
+                                </blockquote>                                
                             </p>
                             <h2>Best Practices for Building Efficient and Secure Images.</h2>
                             <p>
                                 By following these best practices, you can create efficient, secure, and reliable Docker images that provide a solid foundation for your containerized applications. <br>
-                                1. <strong>Keep Images Updated:</strong> Regularly update your base images and dependencies to incorporate the latest security patches and bug fixes.
-
-                                2. <strong>Scan for Vulnerabilities:</strong> Utilize tools like Clair, Trivy, or Docker Security Scan to scan your images for vulnerabilities.
-
-                                3. <strong>Use Official Images:</strong> Whenever possible, use official images from reputable sources, as they are well-maintained and frequently updated.
-
-                                4. <strong>Avoid Unnecessary Privileges:</strong> Run containers with non-root users whenever possible to limit potential damage from container compromise.
-
-                                5. <strong>Use Multi-Stage Builds:</strong> Use multi-stage builds to create smaller and more secure production images by discarding unnecessary build tools used during the build process.
-
-                                6. <strong>Avoid Hardcoding Secrets:</strong> Never hardcode sensitive information like passwords or API keys directly into the image. Instead, use environment variables or Docker secrets.
-
-                                7. <strong>Use .dockerignore:</strong> Properly configure `.dockerignore` to prevent adding unnecessary files to the image and to reduce its size.
-
-                                8. <strong>Enable Content Trust:</strong> Enable Docker Content Trust to verify the authenticity and integrity of images pulled from Docker repositories.                                
+                                1. <strong>Keep Images Updated:</strong> Regularly update your base images and dependencies to incorporate the latest security patches and bug fixes. <br>
+                                2. <strong>Scan for Vulnerabilities:</strong> Utilize tools like Clair, Trivy, or Docker Security Scan to scan your images for vulnerabilities. <br>
+                                3. <strong>Use Official Images:</strong> Whenever possible, use official images from reputable sources, as they are well-maintained and frequently updated. <br>
+                                4. <strong>Avoid Unnecessary Privileges:</strong> Run containers with non-root users whenever possible to limit potential damage from container compromise. <br>
+                                5. <strong>Use Multi-Stage Builds:</strong> Use multi-stage builds to create smaller and more secure production images by discarding unnecessary build tools used during the build process. <br>
+                                6. <strong>Avoid Hardcoding Secrets:</strong> Never hardcode sensitive information like passwords or API keys directly into the image. Instead, use environment variables or Docker secrets. <br>
+                                7. <strong>Use .dockerignore:</strong> Properly configure `.dockerignore` to prevent adding unnecessary files to the image and to reduce its size. <br>
+                                8. <strong>Enable Content Trust:</strong> Enable Docker Content Trust to verify the authenticity and integrity of images pulled from Docker repositories. <br>
                             </p>
                         </div>
                     </p>
