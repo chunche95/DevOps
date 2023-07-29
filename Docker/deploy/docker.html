@@ -157,12 +157,11 @@
                                     </ul>
                                 </p>
 
-                            </p>
-                                
+                            </p>                                
                             <h2>How Docker works</h2>
                             <p>
                                 Docker works by providing a standard way to run your code. Docker is an operating system for containers. Similar to how a virtual machine vitualizes (removes the need to directly manage) server hardware, containers virtualize the operating system of a server. Docker is installed on each server and provides 
-                                simple commands you can use to build, start or stop containers.
+                                simple commands you can use to build, start or stop containers. <br>
                                 <img src="img/how-work.png" class="responsive" alt="">
                             </p>
                             <h2>Why use Docker</h2>
@@ -222,29 +221,30 @@
                                     <h1>Bash Script Installed Docker On Ubuntu</h1>
                                     <p>
 <blockquote>    
+    Script - Install Docker Engine.
         <code>
 <pre>
-        #!/bin/bash
-        
-        # Run the following command to uninstall all conflicting packages
-        for pkg in docker.io docker-doc docker-compose podman-docker containerd runc; do sudo apt-get remove $pkg; done
-        
-        # Set up repository
-        sudo apt-get update
-        sudo apt-get install ca-certificates curl gnupg
-        # Add Docker's official GPG key
-        sudo install -m 0755 -d /etc/apt/keyrings
-        curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
-        sudo chmod a+r /etc/apt/keyrings/docker.gpg
-        # set up the repository
-        echo \
-          "deb [arch="$(dpkg --print-architecture)" signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \
-          "$(. /etc/os-release && echo "$VERSION_CODENAME")" stable" | \
-          sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
-        
-        # Install Docker Engine - Latest
-        sudo apt-get update
-        sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+    #!/bin/bash
+    
+    # Run the following command to uninstall all conflicting packages
+    for pkg in docker.io docker-doc docker-compose podman-docker containerd runc; do sudo apt-get remove $pkg; done
+    
+    # Set up repository
+    sudo apt-get update
+    sudo apt-get install ca-certificates curl gnupg
+    # Add Docker's official GPG key
+    sudo install -m 0755 -d /etc/apt/keyrings
+    curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+    sudo chmod a+r /etc/apt/keyrings/docker.gpg
+    # set up the repository
+    echo \
+        "deb [arch="$(dpkg --print-architecture)" signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \
+        "$(. /etc/os-release && echo "$VERSION_CODENAME")" stable" | \
+        sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+    
+    # Install Docker Engine - Latest
+    sudo apt-get update
+    sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 </pre>    
     </code>
 </blockquote>
@@ -261,38 +261,52 @@
                                         2. <strong>`docker info`:</strong> Display system-wide information about Docker.
                                     </ol>
                                     <ol>
-                                        3. <strong>`docker pull <image-name>:<tag>`:</strong> Download a Docker image from Docker Hub or another container registry.
+                                        3. <strong>`docker pull &#8249; image-name &#8250;`:</strong> Download a Docker image from Docker Hub or another container registry.
                                     </ol>
                                     <ol>
-                                        4. <strong>`docker images`:</strong> List all the Docker images available on your system.
+                                        4. <strong>`docker images  [options] `:</strong> List all the Docker images available on your system.
                                     </ol>
                                     <ol>
-                                        5. <strong>`docker run <image-name>`:</strong> Run a container from a Docker image.
+                                        5. <strong>`docker run [options] &#8249; image-name &#8250;`:</strong> Run a container from a Docker image.
                                     </ol>
                                     <ol>
-                                        6. <strong>`docker ps`:</strong> List all running containers.
+                                        6. <strong>`docker ps  [options] `:</strong> List all running containers.
                                     </ol>
                                     <ol>
                                         7. <strong>`docker ps -a`:</strong> List all containers, including those that are stopped.
                                     </ol>
                                     <ol>
-                                        8. <strong>`docker stop <container-id>`:</strong> Stop a running container.
+                                        8. <strong>`docker stop &#8249; container-id &#8250;`:</strong> Stop a running container.
                                     </ol>
                                     <ol>
-                                        9. <strong>`docker start <container-id>`:</strong> Start a stopped container.
+                                        9. <strong>`docker start &#8249; container-id &#8250;`:</strong> Start a stopped container.
                                     </ol>
                                     <ol>
-                                        10. <strong>`docker restart <container-id>`:</strong> Restart a running container.
+                                        10. <strong>`docker restart &#8249; container-id &#8250;`:</strong> Restart a running container.
                                     </ol>
                                     <ol>
-                                        11. <strong>`docker rm <container-id>`:</strong> Remove a stopped container.
+                                        11. <strong>`docker rm &#8249; container-id &#8250;`:</strong> Remove a stopped container.
                                     </ol>
                                     <ol>
-                                        12. <strong>`docker rmi <image-name>:<tag>`:</strong> Remove a Docker image from your system.
+                                        12. <strong>`docker rmi &#8249; image-name &#8250;`:</strong> Remove a Docker image from your system.
+                                    </ol>
+                                    <ol>
+                                        13. <strong> docker exec [options]  &#8249; container-id/container_name &#8250;  &#8249; command &#8250;`:</strong> Runs a command iside a runnind container. <br>
+                                        <i>Example:</i> 
+                                        <code>
+                                            docker exec -it my:container bash
+                                        </code>
+                                    </ol>
+                                    <ol>
+                                        14. <strong>docker build [options] -t &#8249; image_name &#8250; &#8249; path_to_dockerFile &#8250; </strong> Builds a Docker image from a Dockerfile. <br>
+                                        <i>Example:</i>
+                                        <code>
+                                            docker build -t my_custom_image . 
+                                        </code>
                                     </ol>
                                 </ul>
                                 These commands provide a glimpse of Docker's capabilities. As you explore Docker further, you'll learn about additional commands and features, such as creating custom Docker images using Dockerfiles, managing container networks, working with volumes for data persistence, and orchestrating multiple containers using Docker Compose or Kubernetes.
-                                Now that you have Docker up and running and know some essential commands, you're ready to dive deeper into the world of containerization. Happy containerizing! If you have any specific questions or need further assistance, feel free to ask.
+                                Now that you have Docker up and running and know some essential commands, you're ready to dive deeper into the world of containerization. 
                             </p>
                             <hr>
                             <h1>Understanding containerization and its advantages</h1>
@@ -314,7 +328,65 @@
                                 In conclusion, Docker's containerization technology is a game-changer for modern software development. By enabling efficient container management, portability, scalability, and rapid deployment, Docker empowers developers and organizations to embrace agility, 
                                 reliability, and innovation like never before. Whether you are a seasoned developer or just starting your journey, Docker is a must-have tool in your arsenal for building cutting-edge applications and services.
                             </p>
+                            <hr>
+                            <h1>Building Docker Images</h1>
+                            <p>
+                                MultiverseGPT: Building Docker images is a crucial aspect of using Docker effectively. Docker images are the building blocks of containers and define the environment and application setup that will be run within containers. Creating Docker images from Dockerfiles is a popular approach, as Dockerfiles provide a declarative way to specify the steps required to build the image. Here's a comprehensive guide to building Docker images and best practices for creating efficient and secure images:
 
+                                <h2>Building Docker Images:</h2>
+
+                                1. <strong>Create a Dockerfile:</strong> Start by creating a Dockerfile in your project directory. The Dockerfile contains a set of instructions for building the image.
+
+                                2. <strong>Choose a Base Image:</strong> Select an appropriate base image that suits your application's requirements. Official images from Docker Hub are recommended, as they are regularly maintained and generally more secure.
+
+                                3. <strong>Use Minimal Base Images:</strong> Opt for minimal base images like Alpine Linux when possible. These images are smaller, reducing the attack surface and improving image build times.
+
+                                4. <strong>Copy Application Files:</strong> Copy only necessary application files into the image. Use the `.dockerignore` file to exclude unnecessary files and directories.
+
+                                5. <strong>Run Commands Wisely:</strong> Order the commands in your Dockerfile wisely to leverage caching. Place frequently changing commands (e.g., copying source code) toward the end to maximize build cache reuse.
+
+                                6. <strong>Minimize Layers:</strong> Reduce the number of layers in the image. Each command in the Dockerfile creates a new layer. Combine related commands with `&&` to reduce the number of layers.
+
+                                7. <strong>Clean Up Unnecessary Files:</strong> Remove unnecessary temporary files and dependencies after installing packages to keep the image size small.
+
+                                8. <strong>Use Specific Tags:</strong> Always use specific tags for your base image, like a version number or commit hash. Avoid using "latest" as it can lead to unpredictability.
+                            </p>
+                            <h2>Creating Docker Images from Dockerfiles.</h2>
+                            <p>                                
+                                1. <strong>Build the Image:</strong> Run the `docker build` command to build the Docker image using the Dockerfile in the current directory.
+                                <code>
+                                docker build -t image_name:tag .
+                                </code>
+
+                                2. <strong>Tagging Images:</strong> After building the image, tag it appropriately for easy identification and version control.
+                                <code>
+                                docker tag source_image:source_tag target_image:target_tag
+                                </code>
+
+                                3. <strong>Push to Registry (Optional):</strong> If you want to share your image with others or use it on multiple machines, push it to a container registry like Docker Hub.
+                                <code>
+                                docker push image_name:tag
+                                </code>                                
+                            </p>
+                            <h2>Best Practices for Building Efficient and Secure Images.</h2>
+                            <p>
+                                By following these best practices, you can create efficient, secure, and reliable Docker images that provide a solid foundation for your containerized applications. <br>
+                                1. <strong>Keep Images Updated:</strong> Regularly update your base images and dependencies to incorporate the latest security patches and bug fixes.
+
+                                2. <strong>Scan for Vulnerabilities:</strong> Utilize tools like Clair, Trivy, or Docker Security Scan to scan your images for vulnerabilities.
+
+                                3. <strong>Use Official Images:</strong> Whenever possible, use official images from reputable sources, as they are well-maintained and frequently updated.
+
+                                4. <strong>Avoid Unnecessary Privileges:</strong> Run containers with non-root users whenever possible to limit potential damage from container compromise.
+
+                                5. <strong>Use Multi-Stage Builds:</strong> Use multi-stage builds to create smaller and more secure production images by discarding unnecessary build tools used during the build process.
+
+                                6. <strong>Avoid Hardcoding Secrets:</strong> Never hardcode sensitive information like passwords or API keys directly into the image. Instead, use environment variables or Docker secrets.
+
+                                7. <strong>Use .dockerignore:</strong> Properly configure `.dockerignore` to prevent adding unnecessary files to the image and to reduce its size.
+
+                                8. <strong>Enable Content Trust:</strong> Enable Docker Content Trust to verify the authenticity and integrity of images pulled from Docker repositories.                                
+                            </p>
                         </div>
                     </p>
                 </div>
