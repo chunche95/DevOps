@@ -251,8 +251,8 @@
                                     </p>
                                 </p>
                                 <h2>Basic Docker CLI Commands and Usage:</h2>
-
-                                Once Docker is installed, you can begin working with containers using the Docker CLI. Here are some fundamental commands to get you started:
+                                <p>
+                                    Once Docker is installed, you can begin working with containers using the Docker CLI. Here are some fundamental commands to get you started:
                                 <ul>
                                     <ol>
                                         1. <strong>`docker --version`:</strong> Check the installed Docker version.
@@ -307,6 +307,7 @@
                                 </ul>
                                 These commands provide a glimpse of Docker's capabilities. As you explore Docker further, you'll learn about additional commands and features, such as creating custom Docker images using Dockerfiles, managing container networks, working with volumes for data persistence, and orchestrating multiple containers using Docker Compose or Kubernetes.
                                 Now that you have Docker up and running and know some essential commands, you're ready to dive deeper into the world of containerization. 
+                                </p>                                
                             </p>
                             <hr>
                             <h1>Understanding containerization and its advantages</h1>
@@ -342,40 +343,108 @@
                                 5. <strong>Run Commands Wisely:</strong> Order the commands in your Dockerfile wisely to leverage caching. Place frequently changing commands (e.g., copying source code) toward the end to maximize build cache reuse. <br>
                                 6. <strong>Minimize Layers:</strong> Reduce the number of layers in the image. Each command in the Dockerfile creates a new layer. Combine related commands with `&&` to reduce the number of layers. <br>
                                 7. <strong>Clean Up Unnecessary Files:</strong> Remove unnecessary temporary files and dependencies after installing packages to keep the image size small. <br>
-                                8. <strong>Use Specific Tags:</strong> Always use specific tags for your base image, like a version number or commit hash. Avoid using "latest" as it can lead to unpredictability.
+                                8. <strong>Use Specific Tags:</strong> Always use specific tags for your base image, like a version number or commit hash. Avoid using "latest" as it can lead to unpredictability.                            
+                                <h2>Creating Docker Images from Dockerfiles.</h2>
+                                <p>                                
+                                    1. <strong>Build the Image:</strong> Run the `<code>docker build</code>` command to build the Docker image using the Dockerfile in the current directory.
+                                    <blockquote>
+                                        <code>
+                                            docker build -t image_name:tag .
+                                        </code>
+                                    </blockquote>                                
+                                    2. <strong>Tagging Images:</strong> After building the image, tag it appropriately for easy identification and version control.
+                                    <blockquote>
+                                        <code>
+                                            docker tag source_image:source_tag target_image:target_tag
+                                        </code>
+                                    </blockquote>                        
+                                    3. <strong>Push to Registry (Optional):</strong> If you want to share your image with others or use it on multiple machines, push it to a container registry like Docker Hub.
+                                    <blockquote>
+                                        <code>
+                                            docker push image_name:tag
+                                        </code>
+                                    </blockquote>                                
+                                </p>
+                                <h2>Best Practices for Building Efficient and Secure Images.</h2>
+                                <p>
+                                    By following these best practices, you can create efficient, secure, and reliable Docker images that provide a solid foundation for your containerized applications. <br>
+                                    1. <strong>Keep Images Updated:</strong> Regularly update your base images and dependencies to incorporate the latest security patches and bug fixes. <br>
+                                    2. <strong>Scan for Vulnerabilities:</strong> Utilize tools like Clair, Trivy, or Docker Security Scan to scan your images for vulnerabilities. <br>
+                                    3. <strong>Use Official Images:</strong> Whenever possible, use official images from reputable sources, as they are well-maintained and frequently updated. <br>
+                                    4. <strong>Avoid Unnecessary Privileges:</strong> Run containers with non-root users whenever possible to limit potential damage from container compromise. <br>
+                                    5. <strong>Use Multi-Stage Builds:</strong> Use multi-stage builds to create smaller and more secure production images by discarding unnecessary build tools used during the build process. <br>
+                                    6. <strong>Avoid Hardcoding Secrets:</strong> Never hardcode sensitive information like passwords or API keys directly into the image. Instead, use environment variables or Docker secrets. <br>
+                                    7. <strong>Use .dockerignore:</strong> Properly configure `.dockerignore` to prevent adding unnecessary files to the image and to reduce its size. <br>
+                                    8. <strong>Enable Content Trust:</strong> Enable Docker Content Trust to verify the authenticity and integrity of images pulled from Docker repositories. <br>
+                                </p>
                             </p>
-                            <h2>Creating Docker Images from Dockerfiles.</h2>
-                            <p>                                
-                                1. <strong>Build the Image:</strong> Run the `<code>docker build</code>` command to build the Docker image using the Dockerfile in the current directory.
-                                <blockquote>
-                                    <code>
-                                        docker build -t image_name:tag .
-                                    </code>
-                                </blockquote>                                
-                                2. <strong>Tagging Images:</strong> After building the image, tag it appropriately for easy identification and version control.
-                                <blockquote>
-                                    <code>
-                                        docker tag source_image:source_tag target_image:target_tag
-                                    </code>
-                                </blockquote>                        
-                                3. <strong>Push to Registry (Optional):</strong> If you want to share your image with others or use it on multiple machines, push it to a container registry like Docker Hub.
-                                <blockquote>
-                                    <code>
-                                        docker push image_name:tag
-                                    </code>
-                                </blockquote>                                
-                            </p>
-                            <h2>Best Practices for Building Efficient and Secure Images.</h2>
+                            <h1>Docker networking: Configuring Networking for Containers</h1>
                             <p>
-                                By following these best practices, you can create efficient, secure, and reliable Docker images that provide a solid foundation for your containerized applications. <br>
-                                1. <strong>Keep Images Updated:</strong> Regularly update your base images and dependencies to incorporate the latest security patches and bug fixes. <br>
-                                2. <strong>Scan for Vulnerabilities:</strong> Utilize tools like Clair, Trivy, or Docker Security Scan to scan your images for vulnerabilities. <br>
-                                3. <strong>Use Official Images:</strong> Whenever possible, use official images from reputable sources, as they are well-maintained and frequently updated. <br>
-                                4. <strong>Avoid Unnecessary Privileges:</strong> Run containers with non-root users whenever possible to limit potential damage from container compromise. <br>
-                                5. <strong>Use Multi-Stage Builds:</strong> Use multi-stage builds to create smaller and more secure production images by discarding unnecessary build tools used during the build process. <br>
-                                6. <strong>Avoid Hardcoding Secrets:</strong> Never hardcode sensitive information like passwords or API keys directly into the image. Instead, use environment variables or Docker secrets. <br>
-                                7. <strong>Use .dockerignore:</strong> Properly configure `.dockerignore` to prevent adding unnecessary files to the image and to reduce its size. <br>
-                                8. <strong>Enable Content Trust:</strong> Enable Docker Content Trust to verify the authenticity and integrity of images pulled from Docker repositories. <br>
+                                Docker provides various networking options to allow containers to communicate with each other and with external networks. By defaults, Docker sets up a bridge network for each container, providing them with internal IP address. Here are some key networking configurations for containers:
+                                <ul>
+                                    <li>Bridge Network. <br>
+                                        This is the default network created by Docker. Containers within the same bridge network can communicate with each other using their internal IP addresses. Use the '--network' option to especify the bridge network when running containers.
+                                    </li>
+                                    <li>Host Network. <br>
+                                        With the '--network=host' option, containers share the host's network stack. This means they can directly access services running in the host's networkm but it also expose the containers on the host's network interfaces.
+                                    </li>
+                                    <li>Overlay Network. <br>
+                                        Overlay networks enable communication between containers accross multiple Docker hosts in a swarm cluster. This is essential for distributed applications and scaling. 
+                                    </li>
+                                    <li>Macvlan Network. <br>
+                                        Macvlan allows containers to have unique MAC addresses, making them apeear as separate physical devices on the network. This is useful when containers need direct access to the physical network.
+                                    </li>
+                                    <li>User-Defined Bridge Network. <br>
+                                        You can create custom  bridge networks using the '<code>docker network create</code>' commnad. This allows you to isolate containers on custom networks while enabling communication between them.
+                                    </li>
+                                    <li> Esternal Networking. <br>
+                                        Containers can also use the host's network directly or connect to existing external networks, enabling interaction with other devices on the same network.
+                                    </li>
+                                </ul>
+                                <h2>Creating Multi-Container Applications with Docker Compose</h2>
+                                <p>
+                                    Docker Compose simplifies the management of complex multi-container applicaions, making it easier to develop, deploy and scale them. With a well-defined 'docker-compose.yml' file, you can ensure consistency and reproducibility across different environments.
+                                    <a href="https://docs.docker.com/compose/" target="_blank" rel="noopener noreferrer">Docker Compose</a> is a tool for defining and running multi-container Docker applications. It uses a YAML file (usually named 'docker-compose.yml') to define the services, networks and volumes requiref for your application. Here's how to create multi-container applications using Docker Compose:
+                                    <ol>
+                                        <li>
+                                            <b>Install Docker Compose</b>Ensure you have Docker Compose installed on your system. If not you can download it from <a href="https://docs.docker.com/compose/install/" target="_blank" rel="noopener noreferrer">the Docker website.</a>
+                                        </li>
+                                        <li>
+                                            <b>Write docker-compose.yml</b> Create a 'docker-compose.yml' file in your project directory. Define the services, networks and volumes needed for your application. Specify the images, environment variables, ports and other configurations for each service.
+                                        </li>
+                                        <li>
+                                            <b>Build and Start</b> Run the following command to build and star your multi-container application. 
+                                            <blockquote>
+                                                <code>
+                                                    docker-compose up
+                                                </code>
+                                            </blockquote>
+                                        </li>
+                                        <li>
+                                            <b>Scaling Services</b> Docker Compose allows you to scale services easily. For instance, if you want to run multiple instances of a service, use the --scale' option.
+                                            <blockquote>
+                                                <code>
+                                                    docker-compose up --scale service_name=num_instances
+                                                </code>
+                                            </blockquote>
+                                        </li>
+                                        <li>
+                                            <b>Stop and Remove</b> To stop and remove the containers created by Docker Compose, use:
+                                            <blockquote>
+                                                <code>
+                                                    docker-compose down
+                                                </code>
+                                            </blockquote>
+                                        </li>
+                                        <li>
+                                            <b>Volumes</b> Define named volumes in your 'docker-compose.yml' to persist data across container restarts.
+                                        </li>
+                                        <li>
+                                            <b>Networks</b> Specify custom networkds in the 'docker-compose.yml' file to control the communication netween containers.
+                                        </li>
+                                    </ol>
+
+                                </p>
                             </p>
                         </div>
                     </p>
