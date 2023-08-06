@@ -851,9 +851,11 @@
                                     <blockquote>
                                         <i>
                                             <strong>Important</strong> <br>
-
+                                            Docker does not provide the level of isolation available with virtual machines. A virtual machine implements isolation at the hardware level. Docker containers share underlying operating system resources and libraries. However, Docker ensures that one container cannot access the resources of another unless the containers are configured to do so.
                                         </i>
                                     </blockquote>
+                                    You can run Docker on your desktop or laptop if you're developing and testing locally. For production systems, Docker is available for server environments, including many variants of Linux and Microsoft Windows Server 2016. Many vendors also support Docker in the cloud. For example, you can store Docker images in Azure Container Registry and run containers with Azure Container Instances. <br>
+                                    In this module, you'll use Docker locally to build and run an image. Then you'll upload the image to Azure Container Registry and run it in an Azure Container Instance. This version of Docker is suitable for local development and testing of Docker images.
                                 </p>
                             </p>
                         </div>
