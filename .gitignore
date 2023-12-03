@@ -1,4 +1,8 @@
 Docker/European-Parliament-Online/Monitor/portainer/portainer-data/*
-
+.git/objects
 .vscode
 
+.git/objects
+Docker/dockerlabs/.jekyll-cache/*
+Docker/dockerlabs/Weave-UI.png
+node_modules
