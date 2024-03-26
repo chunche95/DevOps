@@ -1,0 +1,19 @@
+---
+import Card from '../components/Card.astro'
+import Buttons from '../components/Buttons.astro'
+---
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Astro</title>
+	</head>
+	<body>		
+		<Card title="Titulo principal" text="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias similique voluptates tempora voluptas veritatis neque culpa ea, deserunt dicta cupiditate, obcaecati minima beatae! Animi culpa quasi repellendus. Consequuntur, repellat. Tenetur."/>
+		<Card title="Titulo secundario" text="Lorem ipsum dolor sit amet, consectetur adipisicing elit."/>
+		<Buttons a="<a href='../about'></a>" t2="Sobre nosotros"/>
+	</body>
+</html>
